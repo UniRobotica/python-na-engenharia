@@ -8,7 +8,7 @@ on:
       - main
     # Especifica que o workflow só será acionado se houver mudanças em notebooks ou arquivos de configuração do Jupyter Book
     paths:
-      - '**.ipynb'
+      - '**/*.ipynb'
       - '**/*.md'
       - '_config.yml'
       - '_toc.yml'
