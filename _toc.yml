@@ -4,7 +4,7 @@
 format: jb-book
 root: intro
 chapters:
-- file: notebooks\Aula1_ConceitosBasicos.ipynb
-- file: notebooks\Aula2_ControleFluxo.ipynb
-- file: notebooks\Aula3_ImportandoModulos.ipynb
-- file: notebooks\Aula4_Funções.ipynb
+- file: notebooks/Aula1_ConceitosBasicos.ipynb
+- file: notebooks/Aula2_ControleFluxo.ipynb
+- file: notebooks/Aula3_ImportandoModulos.ipynb
+- file: notebooks/Aula4_Funções.ipynb
