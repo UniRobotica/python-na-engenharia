@@ -35,7 +35,7 @@ html:
 content:
   # Caminho para os notebooks
   notebooks:
-    - notebooks/  # Caminho para a pasta onde estão seus notebooks
+    - notebooks/*  # Ou o caminho correto para os seus notebooks  # Caminho para a pasta onde estão seus notebooks
 
 # Ativa os botões para execução interativa (Thebe)
 launch_buttons:
