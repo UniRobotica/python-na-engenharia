@@ -7,11 +7,11 @@ on:
       - master
       - main
     # Especifica que o workflow só será acionado se houver mudanças em notebooks ou arquivos de configuração do Jupyter Book
-    paths:
-      - '**/*.ipynb'
-      - '**/*.md'
-      - '_config.yml'
-      - '_toc.yml'
+    #paths:
+    #  - '**/*.ipynb'
+    #  - '**/*.md'
+    #  - '_config.yml'
+    #  - '_toc.yml'
 
 # This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
