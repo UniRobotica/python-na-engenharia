@@ -1,8 +1,8 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: Intro to ML!
-author: Fabio Scielzo Ortiz
+title: Python na Engenharia
+author: UniRobótica
 logo: jupyter-books.jpg
 
 # Force re-execution of notebooks on each build.
