@@ -8,7 +8,7 @@ logo: jupyter-books.jpg
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
-  execute_notebooks: 'off'
+  execute_notebooks: 'off'  # Não executa os notebooks durante a construção
 
 # Define the name of the latex output file for PDF builds
 latex:
@@ -21,12 +21,23 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://unirobotica.github.io/python-na-engenharia/  # Online location of your book
-  path_to_book: docs  # Optional path to your book, relative to the repository root
-  branch: main  # Which branch of the repository should be used when creating links (optional)
+  url: https://unirobotica.github.io/python-na-engenharia/  # Localização online do seu livro
+  path_to_book: docs  # Caminho para o livro, relativo à raiz do repositório
+  branch: main  # Ramo do repositório a ser usado
 
-# Add GitHub buttons to your book
-# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+# Adiciona botões do GitHub ao seu livro
 html:
   use_issues_button: true
   use_repository_button: true
+  use_edit_page_button: true  # Botão para editar a página
+
+# Adiciona os notebooks à página de conteúdo
+content:
+  # Caminho para os notebooks
+  notebooks:
+    - notebooks/  # Caminho para a pasta onde estão seus notebooks
+
+# Ativa os botões para execução interativa (Thebe)
+launch_buttons:
+  thebe: true  # Ativa o Thebe para execução interativa
+  notebook_interface: "jupyterlab"  # Usa a interface JupyterLab
