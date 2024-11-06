@@ -21,7 +21,7 @@ bibtex_bibfiles:
 
 # Information about where the book exists on the web
 repository:
-  url: https://unirobotica.github.io/python-na-engenharia/  # Localização online do seu livro
+  url: https://github.com/UniRobotica/python-na-engenharia  # Localização online do seu livro
   path_to_book: docs  # Caminho para o livro, relativo à raiz do repositório
   branch: main  # Ramo do repositório a ser usado
 
