@@ -8,3 +8,12 @@ chapters:
 - file: notebooks/Aula2_ControleFluxo.ipynb
 - file: notebooks/Aula3_ImportandoModulos.ipynb
 - file: notebooks/Aula4_Funções.ipynb
+- file: notebooks/Aula5_CriandoModulos.ipynb
+- file: notebooks/Aula6_ExemploAplicacao.ipynb
+- file: notebooks/Aula7_TratamentoExcecao.ipynb
+- file: notebooks/Aula8_Listas.ipynb
+- file: notebooks/Aula9_Listas2.ipynb
+- file: notebooks/Aula10_Dicionarios.ipynb
+- file: notebooks/Aula11_POO_Python.ipynb
+- file: notebooks/Aula12_POO_Python_pessoa.ipynb
+- file: notebooks/Aula13_POO_PythonSelf.ipynb
