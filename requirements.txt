@@ -1,8 +1,4 @@
 jupyter-book
 numpy
-conda 
-update 
-nbformat 
-sphinx 
-myst-parser
+
 
