@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Introdução &#8212; Python na Engenharia</title>
+    <title>Programação orientada a objetos - Parte 2 &#8212; Python na Engenharia</title>
   
   
   
@@ -61,10 +61,11 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Aula12_POO_Python_pessoa';</script>
+    <link rel="icon" href="../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Self" href="Aula13_POO_PythonSelf.html" />
-    <link rel="prev" title="Programação orientada a objetos" href="Aula11_POO_Python.html" />
+    <link rel="next" title="Programação orientada a objetos - Parte 3" href="Aula13_POO_PythonSelf.html" />
+    <link rel="prev" title="Programação orientada a objetos - Parte 1" href="Aula11_POO_Python.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -170,94 +171,18 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Aula1_ConceitosBasicos.html">O que é programar</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula2_ControleFluxo.html">Controle de Fluxo</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula3_ImportandoModulos.html">Importando Módulos</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula4_Fun%C3%A7%C3%B5es.html">Funções</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula5_CriandoModulos.html">Criando módulos</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="Aula6_ExemploAplicacao.html">Exemplo de aplicação 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Aula7_TratamentoExcecao.html">if __name__ == “__main__”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula7_TratamentoExcecao.html">Tratamentos de Exceção</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula8_Listas.html">Listas</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="Aula9_Listas2.html">Métodos</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula10_Dicionarios.html">Dicionários</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Aula11_POO_Python.html">Programação orientada a objetos</a></li>
-
-
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introdução</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Aula13_POO_PythonSelf.html">Self</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula11_POO_Python.html">Programação orientada a objetos - Parte 1</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Programação orientada a objetos - Parte 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula13_POO_PythonSelf.html">Programação orientada a objetos - Parte 3</a></li>
 </ul>
 
     </div>
@@ -483,7 +408,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Introdução</h1>
+    <h1>Programação orientada a objetos - Parte 2</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -493,14 +418,13 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introdução</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-uma-classe">Definindo uma Classe</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#criando-um-objeto">Criando um Objeto</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#atributos-da-classe">Atributos da Classe</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-da-classe">Métodos da Classe</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#construtor-da-classe">Construtor da Classe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducao">Introdução</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-uma-classe">Definindo uma Classe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criando-um-objeto">Criando um Objeto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atributos-da-classe">Atributos da Classe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-da-classe">Métodos da Classe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construtor-da-classe">Construtor da Classe</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -511,16 +435,18 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="introducao">
-<h1>Introdução<a class="headerlink" href="#introducao" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="programacao-orientada-a-objetos-parte-2">
+<h1>Programação orientada a objetos - Parte 2<a class="headerlink" href="#programacao-orientada-a-objetos-parte-2" title="Link to this heading">#</a></h1>
+<section id="introducao">
+<h2>Introdução<a class="headerlink" href="#introducao" title="Link to this heading">#</a></h2>
 <p>As classes são uma forma poderosa de organizar e estruturar nosso código, permitindo a criação de objetos personalizados com propriedades e comportamentos próprios.</p>
 <p>As classes podem ser definidas como modelos para a criação de objetos.</p>
 <p>Elas contêm atributos (variáveis) e métodos (funções) que definem o comportamento do objeto criado a partir da classe.</p>
 <p>Ao criar uma classe, estamos criando um tipo de dado personalizado e reutilizável em nosso código.</p>
 <p>A utilização de classes é extremamente importante na programação orientada a objetos, pois permite a abstração de problemas complexos em entidades menores, além de facilitar a manutenção e reutilização do código.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="definindo-uma-classe">
-<h1>Definindo uma Classe<a class="headerlink" href="#definindo-uma-classe" title="Link to this heading">#</a></h1>
+<section id="definindo-uma-classe">
+<h2>Definindo uma Classe<a class="headerlink" href="#definindo-uma-classe" title="Link to this heading">#</a></h2>
 <p>No Python, podemos definir uma classe utilizando a palavra-chave class, seguida pelo nome da classe.</p>
 <p>O nome da classe deve seguir algumas convenções, como começar com uma letra maiúscula e utilizar a notação CamelCase (iniciais das palavras compostas são maiúsculas e não há espaços ou underscores).</p>
 <p>Aqui está um exemplo simples de uma classe chamada Pessoa:</p>
@@ -535,8 +461,8 @@
 <p>Neste exemplo, utilizamos a palavra-chave pass para indicar que a definição da classe está vazia.</p>
 <p>Isso permite que possamos criar a classe sem implementar nenhum atributo ou método por enquanto.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="criando-um-objeto">
-<h1>Criando um Objeto<a class="headerlink" href="#criando-um-objeto" title="Link to this heading">#</a></h1>
+<section id="criando-um-objeto">
+<h2>Criando um Objeto<a class="headerlink" href="#criando-um-objeto" title="Link to this heading">#</a></h2>
 <p>Uma vez definida a classe, podemos criar objetos a partir dela.</p>
 <p>Esses objetos são chamados de instâncias da classe.</p>
 <p>Para criar uma instância, utilizamos o nome da classe seguido de parênteses:</p>
@@ -550,8 +476,8 @@
 <p>No exemplo acima, criamos uma instância da classe Pessoa e a atribuímos à variável pessoa1.</p>
 <p>Agora, podemos acessar essa instância e manipulá-la.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="atributos-da-classe">
-<h1>Atributos da Classe<a class="headerlink" href="#atributos-da-classe" title="Link to this heading">#</a></h1>
+<section id="atributos-da-classe">
+<h2>Atributos da Classe<a class="headerlink" href="#atributos-da-classe" title="Link to this heading">#</a></h2>
 <p>A classes podem ter atributos, que são variáveis que pertencem à classe e são compartilhadas por todas as instâncias criadas a partir dessa classe.</p>
 <p>Os atributos representam as características que o objeto da classe possui.</p>
 <p>Podemos adicionar um atributo à classe Pessoa da seguinte forma:</p>
@@ -581,8 +507,8 @@
 <p>No exemplo acima, acessamos o atributo nome da instância pessoa1 e o modificamos para “Maria”.</p>
 <p>Podemos fazer o mesmo com o atributo idade.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="metodos-da-classe">
-<h1>Métodos da Classe<a class="headerlink" href="#metodos-da-classe" title="Link to this heading">#</a></h1>
+<section id="metodos-da-classe">
+<h2>Métodos da Classe<a class="headerlink" href="#metodos-da-classe" title="Link to this heading">#</a></h2>
 <p>Além de atributos, as classes também podem ter métodos, que são funções que pertencem à classe e podem ser chamadas pelas instâncias dessa classe.</p>
 <p>Os métodos representam os comportamentos que o objeto da classe pode realizar.</p>
 <p>Podemos adicionar um método à classe Pessoa da seguinte forma:</p>
@@ -610,8 +536,8 @@
 </div>
 <p>No exemplo acima, chamamos o método falar da instância pessoa1, passando a mensagem “Olá!” como parâmetro.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="construtor-da-classe">
-<h1>Construtor da Classe<a class="headerlink" href="#construtor-da-classe" title="Link to this heading">#</a></h1>
+<section id="construtor-da-classe">
+<h2>Construtor da Classe<a class="headerlink" href="#construtor-da-classe" title="Link to this heading">#</a></h2>
 <p>O construtor é um método especial que é executado automaticamente quando uma instância da classe é criada.</p>
 <p>No Python, o construtor é chamado de <strong>init</strong>.</p>
 <p>Podemos utilizar o construtor para definir valores iniciais para os atributos da classe.</p>
@@ -687,6 +613,7 @@ Maria diz: Olá!
 <p>No exemplo acima, criamos uma instância da classe Estudante com o nome “Maria”, idade 18 e matrícula “12345”.</p>
 <p>Ao imprimir os valores dos atributos e ao chamar o método falar, temos acesso aos atributos e métodos da classe base Pessoa.</p>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -724,7 +651,7 @@ Maria diz: Olá!
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Programação orientada a objetos</p>
+        <p class="prev-next-title">Programação orientada a objetos - Parte 1</p>
       </div>
     </a>
     <a class="right-next"
@@ -732,7 +659,7 @@ Maria diz: Olá!
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Self</p>
+        <p class="prev-next-title">Programação orientada a objetos - Parte 3</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -753,14 +680,13 @@ Maria diz: Olá!
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introdução</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-uma-classe">Definindo uma Classe</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#criando-um-objeto">Criando um Objeto</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#atributos-da-classe">Atributos da Classe</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-da-classe">Métodos da Classe</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#construtor-da-classe">Construtor da Classe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducao">Introdução</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-uma-classe">Definindo uma Classe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#criando-um-objeto">Criando um Objeto</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#atributos-da-classe">Atributos da Classe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-da-classe">Métodos da Classe</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#construtor-da-classe">Construtor da Classe</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
@@ -784,7 +710,7 @@ By UniRobótica
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

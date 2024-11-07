@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Programação orientada a objetos &#8212; Python na Engenharia</title>
+    <title>Programação orientada a objetos - Parte 1 &#8212; Python na Engenharia</title>
   
   
   
@@ -61,9 +61,10 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Aula11_POO_Python';</script>
+    <link rel="icon" href="../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Introdução" href="Aula12_POO_Python_pessoa.html" />
+    <link rel="next" title="Programação orientada a objetos - Parte 2" href="Aula12_POO_Python_pessoa.html" />
     <link rel="prev" title="Dicionários" href="Aula10_Dicionarios.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -170,94 +171,18 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Aula1_ConceitosBasicos.html">O que é programar</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula2_ControleFluxo.html">Controle de Fluxo</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula3_ImportandoModulos.html">Importando Módulos</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula4_Fun%C3%A7%C3%B5es.html">Funções</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula5_CriandoModulos.html">Criando módulos</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="Aula6_ExemploAplicacao.html">Exemplo de aplicação 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Aula7_TratamentoExcecao.html">if __name__ == “__main__”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula7_TratamentoExcecao.html">Tratamentos de Exceção</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula8_Listas.html">Listas</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="Aula9_Listas2.html">Métodos</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula10_Dicionarios.html">Dicionários</a></li>
-
-
-
-
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Programação orientada a objetos</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Aula12_POO_Python_pessoa.html">Introdução</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Aula13_POO_PythonSelf.html">Self</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Programação orientada a objetos - Parte 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula12_POO_Python_pessoa.html">Programação orientada a objetos - Parte 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula13_POO_PythonSelf.html">Programação orientada a objetos - Parte 3</a></li>
 </ul>
 
     </div>
@@ -483,7 +408,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Programação orientada a objetos</h1>
+    <h1>Programação orientada a objetos - Parte 1</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -493,12 +418,10 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Programação orientada a objetos</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-especial-init-construtor">O método especial <strong>init</strong> (construtor)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-o-que-e-esse-self">Mas o que é esse self?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-especial-str">O método especial <strong>str</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-especial-init-construtor">O método especial <strong>init</strong> (construtor)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-o-que-e-esse-self">Mas o que é esse self?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-especial-str">O método especial <strong>str</strong></a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -509,10 +432,10 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="programacao-orientada-a-objetos">
-<h1>Programação orientada a objetos<a class="headerlink" href="#programacao-orientada-a-objetos" title="Link to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="programacao-orientada-a-objetos-parte-1">
+<h1>Programação orientada a objetos - Parte 1<a class="headerlink" href="#programacao-orientada-a-objetos-parte-1" title="Link to this heading">#</a></h1>
 <p>Na evolução das linguagens de programação, a necessidade de se representar e manipular informações complexas resultou no conceito de classes e objetos, onde classes servem como abstrações (representação) e objetos seriam instâncias de classes que mantém e permitem a manipulação da informação.</p>
-<p><img alt="image.png" src="notebooks/attachment:image.png" /></p>
+<p><img alt="image.png" src="../_images/img1.png" /></p>
 <p>Em Python, toda informação que usamos é representada na forma de um objeto. Assim, o número 6 é um objeto da classe int, o número 3.14 é um objeto da classe float, e assim por diante.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -525,14 +448,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
-140716406961096
-140716406961096
-140716406961096
-</pre></div>
-</div>
-</div>
 </div>
 <p>Em computação, criar um objeto significa criar uma instância de uma classe.</p>
 <p>Linguagens orientadas a objetos permitem a definição de novas classes.</p>
@@ -540,11 +455,11 @@
 <p>Um estado é definido por um conjunto de variáveis chamadas de atributos.</p>
 <p>Esses estados podem ser alterados por meio de “ações” sobre o objeto, que definem seu comportamento.</p>
 <p>Essas ações são funções chamadas de “métodos”.</p>
-<p><img alt="image.png" src="notebooks/attachment:image.png" /></p>
-<p><img alt="Alt text" src="notebooks/Figuras%5Cimage-1.png" /></p>
-<p><img alt="image.png" src="notebooks/attachment:image.png" /></p>
-<p><img alt="Alt text" src="notebooks/Figuras%5Cimage-4.png" /></p>
-<p><img alt="image.png" src="notebooks/attachment:image.png" /></p>
+<p><img alt="image.png" src="../_images/img2.png" /></p>
+<p><img alt="Alt text" src="../_images/image-1.png" /></p>
+<p><img alt="image.png" src="../_images/img4.png" /></p>
+<p><img alt="Alt text" src="../_images/image-4.png" /></p>
+<p><img alt="image.png" src="../_images/img6.png" /></p>
 <p>Por exemplo, para representar um carro podemos definir:</p>
 <ul class="simple">
 <li><p>uma classe Carro:</p></li>
@@ -556,7 +471,7 @@
 </ul>
 </li>
 </ul>
-<p><img alt="Alt text" src="notebooks/Figuras%5Cimage-5.png" /></p>
+<p><img alt="Alt text" src="../_images/image-5.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Carro</span><span class="p">:</span>
@@ -594,18 +509,9 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fusca igual a brasilia? &gt;  False
-Fusca igual a novo_fusca? &gt;  True
-fusca.ano =  1978
-novo_fusca.ano =  1978
-</pre></div>
 </div>
-</div>
-</div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="o-metodo-especial-init-construtor">
-<h1>O método especial <strong>init</strong> (construtor)<a class="headerlink" href="#o-metodo-especial-init-construtor" title="Link to this heading">#</a></h1>
+<section id="o-metodo-especial-init-construtor">
+<h2>O método especial <strong>init</strong> (construtor)<a class="headerlink" href="#o-metodo-especial-init-construtor" title="Link to this heading">#</a></h2>
 <p>Como sabemos que todos os carros que queremos representar possuem as propriedades “cor”, “ano”, e “modelo”, podemos deixar essas propriedades como atributos da classe e inicializá-las quando um objeto é instanciado (criado).</p>
 <p>Para isso, vamos utilizar o método especial <strong>init</strong>, conhecido como construtor da classe.</p>
 <div class="cell docutils container">
@@ -625,15 +531,10 @@ novo_fusca.ano =  1978
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1991
-</pre></div>
-</div>
-</div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="mas-o-que-e-esse-self">
-<h1>Mas o que é esse self?<a class="headerlink" href="#mas-o-que-e-esse-self" title="Link to this heading">#</a></h1>
+<section id="mas-o-que-e-esse-self">
+<h2>Mas o que é esse self?<a class="headerlink" href="#mas-o-que-e-esse-self" title="Link to this heading">#</a></h2>
 <p>Todo método de uma classe recebe como primeiro parâmetro uma referência à instância que chama o método, permitindo assim que o objeto acesse os seus próprios atributos e métodos.</p>
 <p>Por convenção, chamamos esse primeiro parâmetro de self, mas qualquer outro nome poderia ser utilizado.</p>
 <p>O método especial <strong>init</strong> é chamado automaticamente após a criação de um objeto, e no caso de um Carro, na nova instância são criados os atributos ‘modelo’, ‘ano’ e ‘cor’ com os valores dados como argumentos do construtor (no caso Carro(“Brasilia”, 1968, “amarela”)).</p>
@@ -681,11 +582,6 @@ novo_fusca.ano =  1978
         <span class="n">Carro</span><span class="o">.</span><span class="n">imprima</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
 <span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fuscao preto indo muito raaaaaapiiiiiiiidoooooo!
 </pre></div>
 </div>
 </div>
@@ -738,8 +634,8 @@ novo_fusca.ano =  1978
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="o-metodo-especial-str">
-<h1>O método especial <strong>str</strong><a class="headerlink" href="#o-metodo-especial-str" title="Link to this heading">#</a></h1>
+<section id="o-metodo-especial-str">
+<h2>O método especial <strong>str</strong><a class="headerlink" href="#o-metodo-especial-str" title="Link to this heading">#</a></h2>
 <p>O método imprima é muito útil para qualquer tipo de objeto mas não é a forma mais comum utilizando objetos. Em muitos casos, é desejável simplesmente utilizar a função print para imprimir uma “representação textual” do objeto.</p>
 <p>Na verdade, quando executamos o comando print(6), como o 6 é um objeto da classe int, a função print converte o inteiro 6 no string 6 antes de ser impresso, algo como print( str(6) ). Lembre-se que, dentre as funções para conversão de tipos (lembra do int em int(input(“Digite um número: ”))?), a função str converte o inteiro 6 para o string 6.</p>
 <p>Para exibir então o conteúdo de um objeto usando print, devemos definir o método especial <strong>str</strong>, e devolver um string com a representação textual do objeto. A função str também chama e retorna o valor desse método (se existir).</p>
@@ -787,17 +683,6 @@ novo_fusca.ano =  1978
         <span class="nb">print</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
 <span class="n">main</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>brasilia amarela 1968
-fuscao preto 1981
-brasilia amarela indo a 40 Km/h
-fuscao preto indo a 50 Km/h
-brasilia amarela indo muito raaaaaapiiiiiiiidoooooo!
-brasilia amarela 1968
-fuscao preto indo muito raaaaaapiiiiiiiidoooooo!
 </pre></div>
 </div>
 </div>
@@ -852,12 +737,6 @@ fuscao preto indo muito raaaaaapiiiiiiiidoooooo!
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prata
-True
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -866,12 +745,6 @@ True
 
 <span class="n">celta_1</span><span class="o">.</span><span class="n">Ligar_ar_condicionado</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">celta_1</span><span class="o">.</span><span class="n">ar_condicionado_ligado</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prata
-True
 </pre></div>
 </div>
 </div>
@@ -888,13 +761,8 @@ True
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Prata
-True
-</pre></div>
 </div>
-</div>
-</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -941,7 +809,7 @@ True
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Introdução</p>
+        <p class="prev-next-title">Programação orientada a objetos - Parte 2</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -962,12 +830,10 @@ True
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Programação orientada a objetos</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-especial-init-construtor">O método especial <strong>init</strong> (construtor)</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-o-que-e-esse-self">Mas o que é esse self?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-especial-str">O método especial <strong>str</strong></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-especial-init-construtor">O método especial <strong>init</strong> (construtor)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mas-o-que-e-esse-self">Mas o que é esse self?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-especial-str">O método especial <strong>str</strong></a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
@@ -991,7 +857,7 @@ By UniRobótica
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

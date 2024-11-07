@@ -61,6 +61,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Aula9_Listas2';</script>
+    <link rel="icon" href="../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Dicionários" href="Aula10_Dicionarios.html" />
@@ -170,94 +171,18 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Aula1_ConceitosBasicos.html">O que é programar</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula2_ControleFluxo.html">Controle de Fluxo</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula3_ImportandoModulos.html">Importando Módulos</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula4_Fun%C3%A7%C3%B5es.html">Funções</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula5_CriandoModulos.html">Criando módulos</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="Aula6_ExemploAplicacao.html">Exemplo de aplicação 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Aula7_TratamentoExcecao.html">if __name__ == “__main__”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula7_TratamentoExcecao.html">Tratamentos de Exceção</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula8_Listas.html">Listas</a></li>
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Métodos</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula10_Dicionarios.html">Dicionários</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Aula11_POO_Python.html">Programação orientada a objetos</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Aula12_POO_Python_pessoa.html">Introdução</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Aula13_POO_PythonSelf.html">Self</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula11_POO_Python.html">Programação orientada a objetos - Parte 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula12_POO_Python_pessoa.html">Programação orientada a objetos - Parte 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula13_POO_PythonSelf.html">Programação orientada a objetos - Parte 3</a></li>
 </ul>
 
     </div>
@@ -493,15 +418,13 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Métodos</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-mutaveis-e-imutaveis">Tipos de dados mutáveis ​​e imutáveis</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#o-tipo-de-dados-tupla">O tipo de dados tupla</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#convertendo-tipos-com-as-funcoes-list-e-tuple">Convertendo tipos com as funções list() e tuple()</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#passando-referencias">Passando Referências</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#as-funcoes-copy-e-deepcopy-do-modulo-copy">As funções copy() e deepcopy() do módulo copy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-mutaveis-e-imutaveis">Tipos de dados mutáveis ​​e imutáveis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-tipo-de-dados-tupla">O tipo de dados tupla</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convertendo-tipos-com-as-funcoes-list-e-tuple">Convertendo tipos com as funções list() e tuple()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#passando-referencias">Passando Referências</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#as-funcoes-copy-e-deepcopy-do-modulo-copy">As funções copy() e deepcopy() do módulo copy</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -518,7 +441,7 @@
 <p>Por exemplo,
 se um valor de lista fosse armazenado em spam ,
 você chamaria o método de lista index() nessa lista da seguinte forma:</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>        spam.index(&#39;hello&#39;) . 
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>spam.index(&#39;hello&#39;)
 </pre></div>
 </div>
 <p>A parte do método vem depois do valor, separada por um ponto.</p>
@@ -769,9 +692,8 @@ Listas de valores numéricos ou listas de strings podem ser classificadas com o 
 </div>
 </div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="tipos-de-dados-mutaveis-e-imutaveis">
-<h1>Tipos de dados mutáveis ​​e imutáveis<a class="headerlink" href="#tipos-de-dados-mutaveis-e-imutaveis" title="Link to this heading">#</a></h1>
+<section id="tipos-de-dados-mutaveis-e-imutaveis">
+<h2>Tipos de dados mutáveis ​​e imutáveis<a class="headerlink" href="#tipos-de-dados-mutaveis-e-imutaveis" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Zophie a cat&#39;</span>
@@ -826,19 +748,19 @@ Listas de valores numéricos ou listas de strings podem ser classificadas com o 
 </div>
 </div>
 </div>
-<p><img alt="Alt text" src="notebooks/..%5CFiguras%5Cimage-9.png" /></p>
-<p>eggs = [1, 2, 3]
-del eggs[2]
-del eggs[1]
-del eggs[0]
-eggs.append(4)
-eggs.append(5)
-eggs.append(6)
-eggs</p>
-<p><img alt="Alt text" src="notebooks/..%5CFiguras%5Cimage-10.png" /></p>
+<p><img alt="Alt text" src="../_images/image-9.png" /></p>
+<p>eggs = [1, 2, 3]</p>
+<p>del eggs[2]</p>
+<p>del eggs[1]</p>
+<p>del eggs[0]</p>
+<p>eggs.append(4)</p>
+<p>eggs.append(5)</p>
+<p>eggs.append(6)</p>
+<p>eggs</p>
+<p><img alt="Alt text" src="../_images/image-10.png" /></p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="o-tipo-de-dados-tupla">
-<h1>O tipo de dados tupla<a class="headerlink" href="#o-tipo-de-dados-tupla" title="Link to this heading">#</a></h1>
+<section id="o-tipo-de-dados-tupla">
+<h2>O tipo de dados tupla<a class="headerlink" href="#o-tipo-de-dados-tupla" title="Link to this heading">#</a></h2>
 <p>O tipo de dados tupla é quase idêntico ao tipo de dados lista, exceto de duas maneiras.
 Primeiro, as tuplas são digitadas com parênteses, ( e ) , em vez de colchetes, [ e ] .
 Mas a principal diferença entre as tuplas e as listas é que as tuplas, assim como as strings, são imutáveis.
@@ -924,8 +846,8 @@ Veja que não é possível fazer alteração nas tuplas. Diferentemente do que a
 <p>Para fixar esse conceito, lembre-se que as tuplas e as strings são sequências imutáveis. Já as listas são sequências mutáveis. Isso está de acordo com a documentação oficial do Python.
 As tuplas devem ser usadas em situações em que não haverá necessidade de adicionar, remover ou alterar elementos de um grupo de itens. Exemplos bons seriam os meses do ano, os dias da semana, as estações do ano etc. Nesses casos, não haverá mudança nesses itens (pelo menos isso é muito improvável).</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="convertendo-tipos-com-as-funcoes-list-e-tuple">
-<h1>Convertendo tipos com as funções list() e tuple()<a class="headerlink" href="#convertendo-tipos-com-as-funcoes-list-e-tuple" title="Link to this heading">#</a></h1>
+<section id="convertendo-tipos-com-as-funcoes-list-e-tuple">
+<h2>Convertendo tipos com as funções list() e tuple()<a class="headerlink" href="#convertendo-tipos-com-as-funcoes-list-e-tuple" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">eggs</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;dog&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
@@ -965,8 +887,8 @@ As tuplas devem ser usadas em situações em que não haverá necessidade de adi
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="referencias">
-<h1>Referências<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h1>
+<section id="referencias">
+<h2>Referências<a class="headerlink" href="#referencias" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var1</span> <span class="o">=</span> <span class="mi">42</span>
@@ -995,7 +917,7 @@ As tuplas devem ser usadas em situações em que não haverá necessidade de adi
 </div>
 </div>
 <p>Lembre-se de que variáveis ​​são como caixas que contêm valores. As figuras anteriores deste capítulo mostram que as listas em caixas não são exatamente precisas, porque as variáveis ​​de lista na verdade não contêm listas — elas contêm referências a listas. (Essas referências terão números de ID que o Python usa internamente, mas você pode ignorá-los.)</p>
-<p><img alt="image.png" src="notebooks/attachment:image.png" /></p>
+<p><img alt="image.png" src="../_images/img14.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
@@ -1023,7 +945,7 @@ As tuplas devem ser usadas em situações em que não haverá necessidade de adi
 </div>
 </div>
 </div>
-<p><img alt="Alt text" src="Figuras/image-12.png" /></p>
+<p><img alt="Alt text" src="../_images/image-12.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="s1">&#39;Howdy&#39;</span><span class="p">)</span>
@@ -1102,8 +1024,8 @@ As tuplas devem ser usadas em situações em que não haverá necessidade de adi
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="passando-referencias">
-<h1>Passando Referências<a class="headerlink" href="#passando-referencias" title="Link to this heading">#</a></h1>
+<section id="passando-referencias">
+<h2>Passando Referências<a class="headerlink" href="#passando-referencias" title="Link to this heading">#</a></h2>
 <p>As referências são particularmente importantes para entender como os argumentos são passados ​​para as funções. Quando uma função é chamada, os valores dos argumentos são copiados para as variáveis ​​dos parâmetros. Para listas (e dicionários), isso significa que uma cópia da referência é usada para o parâmetro.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1154,8 +1076,8 @@ As tuplas devem ser usadas em situações em que não haverá necessidade de adi
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="as-funcoes-copy-e-deepcopy-do-modulo-copy">
-<h1>As funções copy() e deepcopy() do módulo copy<a class="headerlink" href="#as-funcoes-copy-e-deepcopy-do-modulo-copy" title="Link to this heading">#</a></h1>
+<section id="as-funcoes-copy-e-deepcopy-do-modulo-copy">
+<h2>As funções copy() e deepcopy() do módulo copy<a class="headerlink" href="#as-funcoes-copy-e-deepcopy-do-modulo-copy" title="Link to this heading">#</a></h2>
 <p>Embora passar referências seja muitas vezes a maneira mais prática de lidar com listas e dicionários, se a função modificar a lista ou dicionário que é passado, você pode não querer essas alterações na lista original ou no valor do dicionário. Para isso, Python fornece um módulo chamado copy que fornece as funções copy() e deepcopy() . O primeiro deles, copy.copy() , pode ser usado para fazer uma cópia duplicada de um valor mutável como uma lista ou dicionário, não apenas uma cópia de uma referência.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1227,7 +1149,7 @@ As tuplas devem ser usadas em situações em que não haverá necessidade de adi
 </div>
 </div>
 </div>
-<p><img alt="Alt text" src="Figuras/image-13.png" /></p>
+<p><img alt="Alt text" src="../_images/image-13.png" /></p>
 <p>Se a lista que você precisa copiar contiver listas, use a função copy.deepcopy() em vez de copy.copy() . A função deepcopy() também copiará essas listas internas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1396,6 +1318,7 @@ id IDE:  1992528123648
 </div>
 </div>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1462,15 +1385,13 @@ id IDE:  1992528123648
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Métodos</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-mutaveis-e-imutaveis">Tipos de dados mutáveis ​​e imutáveis</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#o-tipo-de-dados-tupla">O tipo de dados tupla</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#convertendo-tipos-com-as-funcoes-list-e-tuple">Convertendo tipos com as funções list() e tuple()</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#passando-referencias">Passando Referências</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#as-funcoes-copy-e-deepcopy-do-modulo-copy">As funções copy() e deepcopy() do módulo copy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-mutaveis-e-imutaveis">Tipos de dados mutáveis ​​e imutáveis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-tipo-de-dados-tupla">O tipo de dados tupla</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convertendo-tipos-com-as-funcoes-list-e-tuple">Convertendo tipos com as funções list() e tuple()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#passando-referencias">Passando Referências</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#as-funcoes-copy-e-deepcopy-do-modulo-copy">As funções copy() e deepcopy() do módulo copy</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
@@ -1494,7 +1415,7 @@ By UniRobótica
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>
