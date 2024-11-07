@@ -6,6 +6,7 @@ author: UniRobótica
 copyright: '2024'
 logo: UniRoboticaAzulSemFundo.png
 
+
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
 execute:
@@ -44,5 +45,5 @@ launch_buttons:
   thebe: true  # Ativa o Thebe para execução interativa
   notebook_interface: "jupyterlab"  # Usa a interface JupyterLab
 
-thebe:
-  enabled: true
+thebe_config:
+  always_load: true
