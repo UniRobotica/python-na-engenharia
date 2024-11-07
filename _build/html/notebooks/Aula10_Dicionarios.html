@@ -61,9 +61,10 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Aula10_Dicionarios';</script>
+    <link rel="icon" href="../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Programação orientada a objetos" href="Aula11_POO_Python.html" />
+    <link rel="next" title="Programação orientada a objetos - Parte 1" href="Aula11_POO_Python.html" />
     <link rel="prev" title="Métodos" href="Aula9_Listas2.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -170,94 +171,18 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Aula1_ConceitosBasicos.html">O que é programar</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula2_ControleFluxo.html">Controle de Fluxo</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula3_ImportandoModulos.html">Importando Módulos</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula4_Fun%C3%A7%C3%B5es.html">Funções</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula5_CriandoModulos.html">Criando módulos</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="Aula6_ExemploAplicacao.html">Exemplo de aplicação 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Aula7_TratamentoExcecao.html">if __name__ == “__main__”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula7_TratamentoExcecao.html">Tratamentos de Exceção</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula8_Listas.html">Listas</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="Aula9_Listas2.html">Métodos</a></li>
-
-
-
-
-
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Dicionários</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Aula11_POO_Python.html">Programação orientada a objetos</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Aula12_POO_Python_pessoa.html">Introdução</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Aula13_POO_PythonSelf.html">Self</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula11_POO_Python.html">Programação orientada a objetos - Parte 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula12_POO_Python_pessoa.html">Programação orientada a objetos - Parte 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula13_POO_PythonSelf.html">Programação orientada a objetos - Parte 3</a></li>
 </ul>
 
     </div>
@@ -493,14 +418,12 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Dicionários</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dicionarios-vs-listas">Dicionários vs. Listas</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-keys-valus-e-items">métodos keys() , valus() e items()</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-get">O método get()</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-setdefault">O método setdefault()</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#revisoes">REVISÕES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dicionarios-vs-listas">Dicionários vs. Listas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-keys-valus-e-items">métodos keys() , valus() e items()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-get">O método get()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-setdefault">O método setdefault()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revisoes">REVISÕES</a></li>
 </ul>
-
             </nav>
         </div>
     </div>
@@ -511,7 +434,7 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section id="dicionarios">
+  <section class="tex2jax_ignore mathjax_ignore" id="dicionarios">
 <h1>Dicionários<a class="headerlink" href="#dicionarios" title="Link to this heading">#</a></h1>
 <p>Assim como uma lista, um dicionário é uma coleção mutável de muitos valores.</p>
 <p>Mas, diferentemente dos índices de listas, os índices de dicionários podem usar muitos tipos de dados diferentes, não apenas números inteiros.</p>
@@ -538,9 +461,8 @@
 </div>
 </div>
 </div>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="dicionarios-vs-listas">
-<h1>Dicionários vs. Listas<a class="headerlink" href="#dicionarios-vs-listas" title="Link to this heading">#</a></h1>
+<section id="dicionarios-vs-listas">
+<h2>Dicionários vs. Listas<a class="headerlink" href="#dicionarios-vs-listas" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lista1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;gatos&#39;</span><span class="p">,</span> <span class="s1">&#39;cachorros&#39;</span><span class="p">,</span> <span class="s1">&#39;alces&#39;</span><span class="p">]</span>
@@ -606,8 +528,8 @@
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="metodos-keys-valus-e-items">
-<h1>métodos keys() , valus() e items()<a class="headerlink" href="#metodos-keys-valus-e-items" title="Link to this heading">#</a></h1>
+<section id="metodos-keys-valus-e-items">
+<h2>métodos keys() , valus() e items()<a class="headerlink" href="#metodos-keys-valus-e-items" title="Link to this heading">#</a></h2>
 <p>Quando você usa os métodos keys() , valus() e items() , um loop for pode iterar sobre as chaves, valores ou pares de valores-chave em um dicionário, respectivamente. Observe que os valores no valor dict_items retornado pelo método items() são tuplas da chave e do valor.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -669,8 +591,8 @@
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="o-metodo-get">
-<h1>O método get()<a class="headerlink" href="#o-metodo-get" title="Link to this heading">#</a></h1>
+<section id="o-metodo-get">
+<h2>O método get()<a class="headerlink" href="#o-metodo-get" title="Link to this heading">#</a></h2>
 <p>os dicionários têm um método get() que aceita dois argumentos: a chave do valor a ser recuperado e um valor substituto a ser retornado se essa chave não existir.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -703,8 +625,8 @@
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="o-metodo-setdefault">
-<h1>O método setdefault()<a class="headerlink" href="#o-metodo-setdefault" title="Link to this heading">#</a></h1>
+<section id="o-metodo-setdefault">
+<h2>O método setdefault()<a class="headerlink" href="#o-metodo-setdefault" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;nome&#39;</span><span class="p">:</span> <span class="s1">&#39;Joao&#39;</span><span class="p">,</span> <span class="s1">&#39;idade&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">}</span>
@@ -788,7 +710,7 @@
 </div>
 </div>
 </div>
-<p><img alt="Alt text" src="notebooks/..%5CFiguras%5Cimage-15.png" /></p>
+<p><img alt="Alt text" src="../_images/image-15.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theBoard</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;top-L&#39;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;top-M&#39;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;top-R&#39;</span><span class="p">:</span> <span class="s1">&#39; &#39;</span><span class="p">,</span>
@@ -926,8 +848,8 @@ Na linha 9 do Código 17 temos o uso do método pop(), usado para remover o item
 <p>del dados_cliente[‘Telefone’]</p>
 <p>print(dados_cliente) # {‘Nome’: ‘Renan’, ‘Endereco’: ‘Rua Cruzeiro do Sul’}</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="revisoes">
-<h1>REVISÕES<a class="headerlink" href="#revisoes" title="Link to this heading">#</a></h1>
+<section id="revisoes">
+<h2>REVISÕES<a class="headerlink" href="#revisoes" title="Link to this heading">#</a></h2>
 <p><a class="reference external" href="https://www.devmedia.com.br/colecoes-no-python-listas-tuplas-e-dicionarios/40678">https://www.devmedia.com.br/colecoes-no-python-listas-tuplas-e-dicionarios/40678</a></p>
 <p>Considere uma lista de dicionários, onde cada dicionário representa um estudante e contém as chaves “nome”, “idade” e “nota_final”. Escreva uma função em Python chamada aprovados_por_idade que receba como entrada essa lista de dicionários e a idade mínima desejada. A função deve retornar uma lista com os nomes dos alunos que têm idade igual ou superior à idade mínima e cuja nota final seja maior ou igual a 7.</p>
 <p>Por exemplo, considerando a seguinte lista de dicionários:</p>
@@ -977,6 +899,7 @@ Na linha 9 do Código 17 temos o uso do método pop(), usado para remover o item
 </div>
 </div>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -1022,7 +945,7 @@ Na linha 9 do Código 17 temos o uso do método pop(), usado para remover o item
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Programação orientada a objetos</p>
+        <p class="prev-next-title">Programação orientada a objetos - Parte 1</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1043,14 +966,12 @@ Na linha 9 do Código 17 temos o uso do método pop(), usado para remover o item
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Dicionários</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dicionarios-vs-listas">Dicionários vs. Listas</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-keys-valus-e-items">métodos keys() , valus() e items()</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-get">O método get()</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-setdefault">O método setdefault()</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#revisoes">REVISÕES</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dicionarios-vs-listas">Dicionários vs. Listas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#metodos-keys-valus-e-items">métodos keys() , valus() e items()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-get">O método get()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-metodo-setdefault">O método setdefault()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#revisoes">REVISÕES</a></li>
 </ul>
-
   </nav></div>
 
 </div></div>
@@ -1074,7 +995,7 @@ By UniRobótica
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>

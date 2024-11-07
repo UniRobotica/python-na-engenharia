@@ -3,6 +3,7 @@
 
 title: Python na Engenharia
 author: UniRobótica
+copyright: '2024'
 logo: UniRoboticaAzulSemFundo.png
 
 # Force re-execution of notebooks on each build.
@@ -27,6 +28,7 @@ repository:
 
 # Adiciona botões do GitHub ao seu livro
 html:
+  favicon: 'favicon.svg'
   use_issues_button: true
   use_repository_button: true
   use_edit_page_button: true  # Botão para editar a página

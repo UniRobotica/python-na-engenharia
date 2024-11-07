@@ -61,6 +61,7 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Aula4_Funções';</script>
+    <link rel="icon" href="../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Criando módulos" href="Aula5_CriandoModulos.html" />
@@ -170,94 +171,18 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Aula1_ConceitosBasicos.html">O que é programar</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula2_ControleFluxo.html">Controle de Fluxo</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula3_ImportandoModulos.html">Importando Módulos</a></li>
-
-
-
-
-
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Funções</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula5_CriandoModulos.html">Criando módulos</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="Aula6_ExemploAplicacao.html">Exemplo de aplicação 1</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Aula7_TratamentoExcecao.html">if __name__ == “__main__”</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula7_TratamentoExcecao.html">Tratamentos de Exceção</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula8_Listas.html">Listas</a></li>
-
 <li class="toctree-l1"><a class="reference internal" href="Aula9_Listas2.html">Métodos</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula10_Dicionarios.html">Dicionários</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Aula11_POO_Python.html">Programação orientada a objetos</a></li>
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Aula12_POO_Python_pessoa.html">Introdução</a></li>
-
-
-
-
-
-<li class="toctree-l1"><a class="reference internal" href="Aula13_POO_PythonSelf.html">Self</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula11_POO_Python.html">Programação orientada a objetos - Parte 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula12_POO_Python_pessoa.html">Programação orientada a objetos - Parte 2</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula13_POO_PythonSelf.html">Programação orientada a objetos - Parte 3</a></li>
 </ul>
 
     </div>
@@ -493,25 +418,25 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Funções</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#instrucoes-def-com-parametros">Instruções def com parâmetros</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definir-chamar-passar-argumento-parametro">Definir, Chamar, Passar, Argumento, Parâmetro</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-de-retorno-e-instrucoes-de-retorno">Valores de retorno e instruções de retorno</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#o-valor-none">O valor None</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#call-stack">CALL Stack</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#escopo-local-e-global">Escopo Local e Global</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#os-escopos-locais-nao-podem-usar-variaveis-em-outros-escopos-locais">Os escopos locais não podem usar variáveis ​​em outros escopos locais</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variaveis-globais-podem-ser-lidas-em-um-escopo-local">Variáveis ​​globais podem ser lidas em um escopo local</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variaveis-locais-e-globais-com-o-mesmo-nome">Variáveis ​​locais e globais com o mesmo nome</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-declaracao-global">A declaração global</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacao-de-excecao">Manipulação de exceção</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-fibonacci">Série Fibonacci</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-funcoes">Definindo funções</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-proporcao-aurea">O que é Proporção Áurea?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-recursivas">Funções recursivas</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-na-engenharia-civil">Exemplo na engenharia civil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instrucoes-def-com-parametros">Instruções def com parâmetros</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definir-chamar-passar-argumento-parametro">Definir, Chamar, Passar, Argumento, Parâmetro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-de-retorno-e-instrucoes-de-retorno">Valores de retorno e instruções de retorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-valor-none">O valor None</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#call-stack">CALL Stack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escopo-local-e-global">Escopo Local e Global</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#os-escopos-locais-nao-podem-usar-variaveis-em-outros-escopos-locais">Os escopos locais não podem usar variáveis ​​em outros escopos locais</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variaveis-globais-podem-ser-lidas-em-um-escopo-local">Variáveis ​​globais podem ser lidas em um escopo local</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variaveis-locais-e-globais-com-o-mesmo-nome">Variáveis ​​locais e globais com o mesmo nome</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-declaracao-global">A declaração global</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacao-de-excecao">Manipulação de exceção</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-fibonacci">Série Fibonacci</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-funcoes">Definindo funções</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-proporcao-aurea">O que é Proporção Áurea?</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-recursivas">Funções recursivas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-na-engenharia-civil">Exemplo na engenharia civil</a></li>
+</ul>
             </nav>
         </div>
     </div>
@@ -522,7 +447,11 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="funcoes">
+  <ul class="simple">
+<li><p><a href="https://github.com/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula4_Fun%C3%A7%C3%B5es.ipynb" target="_blank">Link da aula no GitHub</a></p></li>
+<li><p><a href="https://colab.research.google.com/github/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula4_Fun%C3%A7%C3%B5es.ipynb" target="_blank">Link da aula no Colab</a></p></li>
+</ul>
+<section class="tex2jax_ignore mathjax_ignore" id="funcoes">
 <h1>Funções<a class="headerlink" href="#funcoes" title="Link to this heading">#</a></h1>
 <p>Python fornece diversas funções integradas, mas você também pode escrever suas próprias funções. Uma função é como um miniprograma dentro de um programa.</p>
 <div class="cell docutils container">
@@ -556,9 +485,8 @@
 <p>Quando a execução do programa atingir essas chamadas, ele irá para a linha superior da função e começará a executar o código ali.</p>
 <p>Ao chegar ao final da função, a execução retorna para a linha que chamou a função e continua percorrendo o código como antes.</p>
 <p>Um dos principais objetivos das funções é agrupar o código que é executado várias vezes.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="instrucoes-def-com-parametros">
-<h1>Instruções def com parâmetros<a class="headerlink" href="#instrucoes-def-com-parametros" title="Link to this heading">#</a></h1>
+<section id="instrucoes-def-com-parametros">
+<h2>Instruções def com parâmetros<a class="headerlink" href="#instrucoes-def-com-parametros" title="Link to this heading">#</a></h2>
 <p>Ao chamar a função print() ou len() , você passa valores para eles, chamados argumentos , digitando-os entre parênteses. Você também pode definir suas próprias funções que aceitam argumentos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -610,8 +538,8 @@ A execução do programa entra na função e o nome do parâmetro é automaticam
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="definir-chamar-passar-argumento-parametro">
-<h1>Definir, Chamar, Passar, Argumento, Parâmetro<a class="headerlink" href="#definir-chamar-passar-argumento-parametro" title="Link to this heading">#</a></h1>
+<section id="definir-chamar-passar-argumento-parametro">
+<h2>Definir, Chamar, Passar, Argumento, Parâmetro<a class="headerlink" href="#definir-chamar-passar-argumento-parametro" title="Link to this heading">#</a></h2>
 <p>Definir uma função é criá-la, assim como uma instrução de atribuição como spam = 42 cria a variável spam.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -633,8 +561,8 @@ Esta chamada de função também é conhecida como passagem do valor da string �
 O argumento ‘Al’ é atribuído a uma variável local chamada name.
 Variáveis ​​que possuem argumentos atribuídos a elas são parâmetros.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="valores-de-retorno-e-instrucoes-de-retorno">
-<h1>Valores de retorno e instruções de retorno<a class="headerlink" href="#valores-de-retorno-e-instrucoes-de-retorno" title="Link to this heading">#</a></h1>
+<section id="valores-de-retorno-e-instrucoes-de-retorno">
+<h2>Valores de retorno e instruções de retorno<a class="headerlink" href="#valores-de-retorno-e-instrucoes-de-retorno" title="Link to this heading">#</a></h2>
 <p>Quando você chama a função len() e passa um argumento como ‘Hello’ , a chamada da função é avaliada como o valor inteiro 5 , que é o comprimento da string que você passou. Em geral, o valor avaliado por uma chamada de função é chamado de valor de retorno da função.</p>
 <p>Ao criar uma função usando a instrução def , você pode especificar qual deve ser o valor de retorno com uma instrução return . Uma instrução de retorno consiste no seguinte:</p>
 <ul class="simple">
@@ -694,8 +622,8 @@ Variáveis ​​que possuem argumentos atribuídos a elas são parâmetros.</p>
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="o-valor-none">
-<h1>O valor None<a class="headerlink" href="#o-valor-none" title="Link to this heading">#</a></h1>
+<section id="o-valor-none">
+<h2>O valor None<a class="headerlink" href="#o-valor-none" title="Link to this heading">#</a></h2>
 <p>Em Python, existe um valor chamado None , que representa a ausência de um valor. O valor None é o único valor do tipo de dados NoneType . (Outras linguagens de programação podem chamar esse valor de null , nil ou undefined .) Assim como os valores booleanos True e False , None deve ser digitado com N maiúsculo .</p>
 <p>Esse valor sem valor pode ser útil quando você precisa armazenar algo que não será confundido com um valor real em uma variável. Um lugar onde None é usado é como valor de retorno de print() . A função print() exibe texto na tela, mas não precisa retornar nada da mesma forma que len() ou input() . Mas como todas as chamadas de função precisam ser avaliadas como um valor de retorno, print() retorna None.</p>
 <p>Python adiciona return None ao final de qualquer definição de função sem instrução de retorno . Isso é semelhante a como um loop while ou for termina implicitamente com uma instrução continue . Além disso, se você usar uma instrução return sem um valor (ou seja, apenas a palavra-chave return por si só), None será retornado</p>
@@ -752,15 +680,15 @@ Variáveis ​​que possuem argumentos atribuídos a elas são parâmetros.</p>
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="call-stack">
-<h1>CALL Stack<a class="headerlink" href="#call-stack" title="Link to this heading">#</a></h1>
+<section id="call-stack">
+<h2>CALL Stack<a class="headerlink" href="#call-stack" title="Link to this heading">#</a></h2>
 <p>Imagine que você tem uma conversa sinuosa com alguém.</p>
 <p>Você fala sobre sua amiga Alice, o que então te lembra uma história sobre seu colega de trabalho Bob, mas primeiro você tem que explicar algo sobre sua prima Carol.</p>
 <p>Você termina sua história sobre Carol e volta a falar sobre Bob, e quando termina sua história sobre Bob, volta a falar sobre Alice.</p>
 <p>Mas então você se lembra de seu irmão David, então conta uma história sobre ele e depois volta a terminar sua história original sobre Alice.</p>
 <p>Sua conversa seguiu uma estrutura semelhante a uma pilha , como na Figura seguinte.</p>
 <p>A conversa é semelhante a uma pilha porque o tópico atual está sempre no topo da pilha.</p>
-<p><img alt="image.png" src="notebooks/attachment:image.png" /></p>
+<p><img alt="image.png 1" src="../_images/img011.jpg" /></p>
 <p>Semelhante ao exemplo, chamar uma função não envia a execução em uma viagem só de ida ao topo de uma função.</p>
 <p>Python lembrará qual linha de código chamou a função para que a execução possa retornar para lá quando encontrar uma instrução de retorno .</p>
 <p>Se essa função original chamasse outras funções, a execução retornaria primeiro a essas chamadas de função, antes de retornar da chamada de função original.</p>
@@ -790,10 +718,10 @@ Variáveis ​​que possuem argumentos atribuídos a elas são parâmetros.</p>
 </div>
 </div>
 </div>
-<p><img alt="image.png" src="notebooks/attachment:image.png" /></p>
+<p><img alt="image.png 2" src="../_images/img021.jpg" /></p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="escopo-local-e-global">
-<h1>Escopo Local e Global<a class="headerlink" href="#escopo-local-e-global" title="Link to this heading">#</a></h1>
+<section id="escopo-local-e-global">
+<h2>Escopo Local e Global<a class="headerlink" href="#escopo-local-e-global" title="Link to this heading">#</a></h2>
 <p>Diz-se que os parâmetros e variáveis ​​atribuídos em uma função chamada existem no escopo local dessa função . Diz-se que variáveis ​​atribuídas fora de todas as funções existem no escopo global . Uma variável que existe em um escopo local é chamada de variável local , enquanto uma variável que existe no escopo global é chamada de variável global. Uma variável deve ser uma ou outra; não pode ser local e global.</p>
 <ul class="simple">
 <li><p>O código no escopo global, fora de todas as funções, não pode usar variáveis ​​locais.</p></li>
@@ -831,8 +759,8 @@ Variáveis ​​que possuem argumentos atribuídos a elas são parâmetros.</p>
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="os-escopos-locais-nao-podem-usar-variaveis-em-outros-escopos-locais">
-<h1>Os escopos locais não podem usar variáveis ​​em outros escopos locais<a class="headerlink" href="#os-escopos-locais-nao-podem-usar-variaveis-em-outros-escopos-locais" title="Link to this heading">#</a></h1>
+<section id="os-escopos-locais-nao-podem-usar-variaveis-em-outros-escopos-locais">
+<h2>Os escopos locais não podem usar variáveis ​​em outros escopos locais<a class="headerlink" href="#os-escopos-locais-nao-podem-usar-variaveis-em-outros-escopos-locais" title="Link to this heading">#</a></h2>
 <p>Um novo escopo local é criado sempre que uma função é chamada, inclusive quando uma função é chamada de outra função. Considere este programa:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -868,8 +796,8 @@ Variáveis ​​que possuem argumentos atribuídos a elas são parâmetros.</p>
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="variaveis-globais-podem-ser-lidas-em-um-escopo-local">
-<h1>Variáveis ​​globais podem ser lidas em um escopo local<a class="headerlink" href="#variaveis-globais-podem-ser-lidas-em-um-escopo-local" title="Link to this heading">#</a></h1>
+<section id="variaveis-globais-podem-ser-lidas-em-um-escopo-local">
+<h2>Variáveis ​​globais podem ser lidas em um escopo local<a class="headerlink" href="#variaveis-globais-podem-ser-lidas-em-um-escopo-local" title="Link to this heading">#</a></h2>
 <p>No seguinte programa: Como não existe nenhum parâmetro chamado num1 ou qualquer código que atribua um valor ao num1 na função funcao1() , quando num1 é usado em funcao1() , o Python considera isso uma referência à variável global num1 . É por isso que 42 é impresso quando o programa anterior é executado.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -887,8 +815,8 @@ Variáveis ​​que possuem argumentos atribuídos a elas são parâmetros.</p>
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="variaveis-locais-e-globais-com-o-mesmo-nome">
-<h1>Variáveis ​​locais e globais com o mesmo nome<a class="headerlink" href="#variaveis-locais-e-globais-com-o-mesmo-nome" title="Link to this heading">#</a></h1>
+<section id="variaveis-locais-e-globais-com-o-mesmo-nome">
+<h2>Variáveis ​​locais e globais com o mesmo nome<a class="headerlink" href="#variaveis-locais-e-globais-com-o-mesmo-nome" title="Link to this heading">#</a></h2>
 <p>Tecnicamente, é perfeitamente aceitável usar o mesmo nome de variável para uma variável global e variáveis ​​locais em escopos diferentes em Python. Mas, para simplificar a sua vida, evite fazer isso.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -918,8 +846,8 @@ Variáveis ​​que possuem argumentos atribuídos a elas são parâmetros.</p>
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="a-declaracao-global">
-<h1>A declaração global<a class="headerlink" href="#a-declaracao-global" title="Link to this heading">#</a></h1>
+<section id="a-declaracao-global">
+<h2>A declaração global<a class="headerlink" href="#a-declaracao-global" title="Link to this heading">#</a></h2>
 <p>Se você precisar modificar uma variável global dentro de uma função, use a instrução global . Se você tiver uma linha como variáveis globais no topo de uma função, ela diz ao Python: “Nesta função, nome_da_variável se referem à variável global, então não crie uma variável local com este nome”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -991,8 +919,8 @@ Variáveis ​​que possuem argumentos atribuídos a elas são parâmetros.</p>
 <p>Freqüentemente, tudo que você precisa saber sobre uma função são suas entradas (os parâmetros) e seu valor de saída; você nem sempre precisa se preocupar com o funcionamento real do código da função.</p>
 <p>Quando você pensa sobre funções dessa forma de alto nível, é comum dizer que você está tratando uma função como uma “caixa preta”.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="manipulacao-de-excecao">
-<h1>Manipulação de exceção<a class="headerlink" href="#manipulacao-de-excecao" title="Link to this heading">#</a></h1>
+<section id="manipulacao-de-excecao">
+<h2>Manipulação de exceção<a class="headerlink" href="#manipulacao-de-excecao" title="Link to this heading">#</a></h2>
 <p>Por exemplo, considere o programa a seguir, que apresenta um erro de divisão por zero.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1112,28 +1040,27 @@ Variáveis ​​que possuem argumentos atribuídos a elas são parâmetros.</p>
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="serie-fibonacci">
-<h1>Série Fibonacci<a class="headerlink" href="#serie-fibonacci" title="Link to this heading">#</a></h1>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="definindo-funcoes">
-<h1>Definindo funções<a class="headerlink" href="#definindo-funcoes" title="Link to this heading">#</a></h1>
+<section id="serie-fibonacci">
+<h2>Série Fibonacci<a class="headerlink" href="#serie-fibonacci" title="Link to this heading">#</a></h2>
+<section id="definindo-funcoes">
+<h3>Definindo funções<a class="headerlink" href="#definindo-funcoes" title="Link to this heading">#</a></h3>
 <p>A sequência de Fibonacci é um padrão numérico em que o primeiro e o segundo termo são iguais a 1 e cada termo a partir do terceiro é a soma dos dois termos anteriores.</p>
-<p><img alt="fibonacci-pathernon.jpg" src="notebooks/attachment:fibonacci-pathernon.jpg" /></p>
+<p><img alt="fibonacci-pathernon.jpg 3" src="../_images/img031.png" /></p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="o-que-e-proporcao-aurea">
-<h1>O que é Proporção Áurea?<a class="headerlink" href="#o-que-e-proporcao-aurea" title="Link to this heading">#</a></h1>
+<section id="o-que-e-proporcao-aurea">
+<h3>O que é Proporção Áurea?<a class="headerlink" href="#o-que-e-proporcao-aurea" title="Link to this heading">#</a></h3>
 <p>Proporção áurea é uma constante real algébrica irracional utilizada na arquitetura, nas artes e no design gráfico. Ela é representada pela divisão de uma reta em dois segmentos (a e b), sendo que quando a soma desses segmentos é dividida pela parte mais longa, o resultado obtido é de aproximadamente 1,61803398875. Este valor é chamado de “número de Ouro”.</p>
-<p><img alt="image.png" src="notebooks/attachment:image.png" /></p>
-<p><img alt="image.png" src="notebooks/attachment:image.png" /></p>
-<p><img alt="image.png" src="notebooks/attachment:image.png" /></p>
-<p><img alt="image.png" src="notebooks/attachment:image.png" /></p>
-<p><img alt="Captura de tela 2024-04-01 100042.png" src="notebooks/attachment:Captura%20de%20tela%202024-04-01%20100042.png" /></p>
-<p><img alt="image.png" src="notebooks/attachment:image.png" /></p>
-<p><img alt="image.png" src="notebooks/attachment:image.png" /></p>
+<p><img alt="image.png 4" src="../_images/img041.png" /></p>
+<p><img alt="image.png 5" src="../_images/img051.png" /></p>
+<p><img alt="image.png 6" src="../_images/img061.png" /></p>
+<p><img alt="image.png 7" src="../_images/img071.png" /></p>
+<p><img alt="image 8" src="../_images/img081.png" /></p>
+<p><img alt="image.png 9" src="../_images/img09.png" /></p>
+<p><img alt="image.png 10" src="../_images/img10.png" /></p>
 <p>A distância entre o queixo e a base do nariz deve ser a mesma distância da base do nariz até a parte inferior da testa.</p>
 <p>Essa mesma medida deve ser também o tamanho da testa e da orelha.</p>
 <p>A proporção áurea no rosto também diz que o nariz tem a mesma largura do olho. Essa medida também é a distância entre um olho e outro.</p>
-<p><img alt="image.png" src="notebooks/attachment:image.png" /></p>
+<p><img alt="image.png 11" src="../_images/img11.png" /></p>
 <p>Podemos criar uma função que escreve a série de Fibonacci até um limite arbitrário:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1268,10 +1195,11 @@ Variáveis ​​que possuem argumentos atribuídos a elas são parâmetros.</p>
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="funcoes-recursivas">
-<h1>Funções recursivas<a class="headerlink" href="#funcoes-recursivas" title="Link to this heading">#</a></h1>
+</section>
+<section id="funcoes-recursivas">
+<h2>Funções recursivas<a class="headerlink" href="#funcoes-recursivas" title="Link to this heading">#</a></h2>
 <p>Uma função recursiva é toda aquela que chama a si mesma.</p>
-<p><img alt="Exemplo função recursiva" src="Figuras/funcao_recursiva.png" /></p>
+<p><img alt="Exemplo função recursiva" src="../_images/img12.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">contagemRegressiva</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
@@ -1316,8 +1244,8 @@ Variáveis ​​que possuem argumentos atribuídos a elas são parâmetros.</p>
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="exemplo-na-engenharia-civil">
-<h1>Exemplo na engenharia civil<a class="headerlink" href="#exemplo-na-engenharia-civil" title="Link to this heading">#</a></h1>
+<section id="exemplo-na-engenharia-civil">
+<h2>Exemplo na engenharia civil<a class="headerlink" href="#exemplo-na-engenharia-civil" title="Link to this heading">#</a></h2>
 <p>Vamos criar uma função que recebe altura, largura e comprimento, e calcula o valor gasto para construir uma determinada área de concreto. Para isso, considere a seguinte relação: para cada 1kg de cimento que for utilizado, serão necessarios 2kg de areia e 3kg de brita. Também considere a seguinte tabela de valores (por kg):</p>
 <ul class="simple">
 <li><p>Cimento -&gt; R$ 4,50</p></li>
@@ -1344,21 +1272,17 @@ Variáveis ​​que possuem argumentos atribuídos a elas são parâmetros.</p>
 
     <span class="k">return</span> <span class="n">valorTotal</span>
 
-<span class="n">altura</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;digite a altura&quot;</span><span class="p">))</span> <span class="c1">#2.1</span>
-<span class="n">largura</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;digite a largura&quot;</span><span class="p">))</span> <span class="c1">#0.15</span>
-<span class="n">comprimento</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;digite o comprimento&quot;</span><span class="p">))</span> <span class="c1">#5</span>
+<span class="n">altura</span> <span class="o">=</span> <span class="mf">2.1</span>
+<span class="n">largura</span> <span class="o">=</span> <span class="mf">0.15</span>
+<span class="n">comprimento</span> <span class="o">=</span> <span class="mi">5</span>
 <span class="n">custo</span> <span class="o">=</span> <span class="n">calcularCustoConcreto</span><span class="p">(</span><span class="n">altura</span><span class="p">,</span> <span class="n">largura</span><span class="p">,</span> <span class="n">comprimento</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;O custo total foi de R$</span><span class="si">{</span><span class="n">custo</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>O custo total foi de R$4126.50
-</pre></div>
 </div>
-</div>
-</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1426,25 +1350,25 @@ Variáveis ​​que possuem argumentos atribuídos a elas são parâmetros.</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Funções</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#instrucoes-def-com-parametros">Instruções def com parâmetros</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definir-chamar-passar-argumento-parametro">Definir, Chamar, Passar, Argumento, Parâmetro</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-de-retorno-e-instrucoes-de-retorno">Valores de retorno e instruções de retorno</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#o-valor-none">O valor None</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#call-stack">CALL Stack</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#escopo-local-e-global">Escopo Local e Global</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#os-escopos-locais-nao-podem-usar-variaveis-em-outros-escopos-locais">Os escopos locais não podem usar variáveis ​​em outros escopos locais</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variaveis-globais-podem-ser-lidas-em-um-escopo-local">Variáveis ​​globais podem ser lidas em um escopo local</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#variaveis-locais-e-globais-com-o-mesmo-nome">Variáveis ​​locais e globais com o mesmo nome</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#a-declaracao-global">A declaração global</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacao-de-excecao">Manipulação de exceção</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-fibonacci">Série Fibonacci</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-funcoes">Definindo funções</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-proporcao-aurea">O que é Proporção Áurea?</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-recursivas">Funções recursivas</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-na-engenharia-civil">Exemplo na engenharia civil</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instrucoes-def-com-parametros">Instruções def com parâmetros</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#definir-chamar-passar-argumento-parametro">Definir, Chamar, Passar, Argumento, Parâmetro</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-de-retorno-e-instrucoes-de-retorno">Valores de retorno e instruções de retorno</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-valor-none">O valor None</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#call-stack">CALL Stack</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#escopo-local-e-global">Escopo Local e Global</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#os-escopos-locais-nao-podem-usar-variaveis-em-outros-escopos-locais">Os escopos locais não podem usar variáveis ​​em outros escopos locais</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variaveis-globais-podem-ser-lidas-em-um-escopo-local">Variáveis ​​globais podem ser lidas em um escopo local</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variaveis-locais-e-globais-com-o-mesmo-nome">Variáveis ​​locais e globais com o mesmo nome</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-declaracao-global">A declaração global</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manipulacao-de-excecao">Manipulação de exceção</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#serie-fibonacci">Série Fibonacci</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#definindo-funcoes">Definindo funções</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-proporcao-aurea">O que é Proporção Áurea?</a></li>
 </ul>
-
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcoes-recursivas">Funções recursivas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-na-engenharia-civil">Exemplo na engenharia civil</a></li>
+</ul>
   </nav></div>
 
 </div></div>
@@ -1468,7 +1392,7 @@ By UniRobótica
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>
