@@ -43,3 +43,6 @@ content:
 launch_buttons:
   thebe: true  # Ativa o Thebe para execução interativa
   notebook_interface: "jupyterlab"  # Usa a interface JupyterLab
+
+thebe:
+  enabled: true
