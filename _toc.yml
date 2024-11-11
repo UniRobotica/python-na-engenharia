@@ -10,7 +10,7 @@ chapters:
 - file: notebooks/Aula4_Funções.ipynb
 - file: notebooks/Aula5_CriandoModulos.ipynb
 - file: notebooks/Aula6_ExemploAplicacao.ipynb
-- file: notebooks/Aula7_TratamentoExcecao.ipynb
+- file: notebooks\Aula7_ContEscopoExec.ipynb
 - file: notebooks/Aula8_Listas.ipynb
 - file: notebooks/Aula9_Listas2.ipynb
 - file: notebooks/Aula10_Dicionarios.ipynb
