@@ -1,49 +1,47 @@
 # Book settings
-# Learn more at https://jupyterbook.org/customize/config.html
+# Saiba mais em https://jupyterbook.org/customize/config.html
 
 title: Python na Engenharia
 author: UniRobótica
 copyright: '2024'
 logo: UniRoboticaAzulSemFundo.png
 
-
-# Force re-execution of notebooks on each build.
-# See https://jupyterbook.org/content/execute.html
+# Não executa os notebooks durante a construção
 execute:
-  execute_notebooks: 'off'  # Não executa os notebooks durante a construção
+  execute_notebooks: 'off'
 
-# Define the name of the latex output file for PDF builds
+# Define o nome do arquivo LaTeX para builds em PDF
 latex:
   latex_documents:
     targetname: book.tex
 
-# Add a bibtex file so that we can create citations
+# Arquivo BibTeX para citações
 bibtex_bibfiles:
   - references.bib
 
-# Information about where the book exists on the web
+# Informações sobre o repositório do livro
 repository:
-  url: https://github.com/UniRobotica/python-na-engenharia  # Localização online do seu livro
-  path_to_book: docs  # Caminho para o livro, relativo à raiz do repositório
-  branch: main  # Ramo do repositório a ser usado
+  url: https://github.com/UniRobotica/python-na-engenharia
+  path_to_book: docs  # Pasta onde está o livro
+  branch: main        # Ramo usado para publicação
 
-# Adiciona botões do GitHub ao seu livro
+# Configurações de HTML e botões
 html:
   favicon: 'favicon.svg'
   use_issues_button: true
   use_repository_button: true
-  use_edit_page_button: true  # Botão para editar a página
+  use_edit_page_button: true
+  # NÃO incluir baseurl com domínio customizado!
 
-# Adiciona os notebooks à página de conteúdo
+# Caminhos de conteúdo
 content:
-  # Caminho para os notebooks
   notebooks:
-    - notebooks/*  # Ou o caminho correto para os seus notebooks  # Caminho para a pasta onde estão seus notebooks
+    - notebooks/*
 
-# Ativa os botões para execução interativa (Thebe)
+# Ativa Thebe para execução interativa
 launch_buttons:
-  thebe: true  # Ativa o Thebe para execução interativa
-  notebook_interface: "jupyterlab"  # Usa a interface JupyterLab
+  thebe: true
+  notebook_interface: "jupyterlab"
 
 thebe_config:
   always_load: true
