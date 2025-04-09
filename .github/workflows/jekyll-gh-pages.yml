@@ -1,19 +1,11 @@
 name: deploy-book
 
-# Run this when the master or main branch changes, or when notebooks change
 on:
   push:
     branches:
       - master
       - main
-    # Especifica que o workflow só será acionado se houver mudanças em notebooks ou arquivos de configuração do Jupyter Book
-    #paths:
-    #  - '**/*.ipynb'
-    #  - '**/*.md'
-    #  - '_config.yml'
-    #  - '_toc.yml'
 
-# This job installs dependencies, builds the book, and pushes it to `gh-pages`
 jobs:
   deploy-book:
     runs-on: ubuntu-latest
@@ -23,7 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    # Install dependencies
     - name: Set up Python 3.11
       uses: actions/setup-python@v4
       with:
@@ -33,28 +24,25 @@ jobs:
       run: |
         pip install -r requirements.txt
 
-    # (optional) Cache your executed notebooks between runs
-    # if you have config:
-    # execute:
-    #   execute_notebooks: cache
     - name: cache executed notebooks
       uses: actions/cache@v3
       with:
         path: _build/.jupyter_cache
         key: jupyter-book-cache-${{ hashFiles('requirements.txt') }}
 
-    # Build the book
     - name: Build the book
       run: |
         jupyter-book build .
+        touch _build/html/.nojekyll
 
-    # Upload the book's HTML as an artifact
-    - name: Upload artifact
+    - name: Verificar HTML gerado
+      run: ls -l _build/html
+
+    - name: Upload Pages artifact
       uses: actions/upload-pages-artifact@v2
       with:
         path: "_build/html"
 
-    # Deploy the book's HTML to GitHub Pages
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v2
