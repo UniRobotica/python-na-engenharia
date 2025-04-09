@@ -171,6 +171,8 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introdução a programação</a></li>
+
+
 <li class="toctree-l1"><a class="reference internal" href="Aula2_ControleFluxo.html">Controle de Fluxo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula3_ImportandoModulos.html">Importando Módulos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula4_Fun%C3%A7%C3%B5es.html">Funções</a></li>
@@ -183,6 +185,8 @@
 <li class="toctree-l1"><a class="reference internal" href="Aula11_POO_Python.html">Programação orientada a objetos - Parte 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula12_POO_Python_pessoa.html">Programação orientada a objetos - Parte 2</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula13_POO_PythonSelf.html">Programação orientada a objetos - Parte 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula14_POO_EngCivil.html">Programação Orientada a Objetos (POO) - exemplo em Engenharia Civil</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pratica1_AtividadeFluxoDecisao.html">Atividade Prática – Programação com Python</a></li>
 </ul>
 
     </div>
@@ -418,10 +422,23 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introdução a programação</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-programar">O que é programar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encontrando-ajuda">Encontrando Ajuda</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalando-modulos-de-terceiros">Instalando Módulos de Terceiros</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#como-obter-ajuda-no-python">Como Obter Ajuda no Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-a-funcao-help">1. Usando a função <code class="docutils literal notranslate"><span class="pre">help()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-dir-para-listar-atributos-e-metodos">2. Usando <code class="docutils literal notranslate"><span class="pre">dir()</span></code> para listar atributos e métodos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentacao-embutida-com-doc">3. Documentação embutida com <code class="docutils literal notranslate"><span class="pre">.__doc__</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-o-modulo-pydoc">4. Usando o módulo <code class="docutils literal notranslate"><span class="pre">pydoc</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consultando-a-documentacao-oficial">5. Consultando a documentação oficial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pesquisando-em-foruns-e-comunidades">6. Pesquisando em fóruns e comunidades</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#enfrentando-erros">Enfrentando erros</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inserindo-expressoes">Inserindo Expressões</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalando-modulos-de-terceiros">Instalando Módulos de Terceiros</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precedencia">Precedência</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-inteiro-ponto-flutuante-e-string">Tipos de dados inteiro, ponto flutuante e string</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenacao-e-replicacao-de-strings">Concatenação e replicação de strings</a></li>
@@ -436,6 +453,9 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-na-engenharia-civil">Exemplo na Engenharia Civil</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -487,6 +507,65 @@
 <section id="encontrando-ajuda">
 <h2>Encontrando Ajuda<a class="headerlink" href="#encontrando-ajuda" title="Link to this heading">#</a></h2>
 <p>Por exemplo, vamos causar um erro propositalmente</p>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="como-obter-ajuda-no-python">
+<h1>Como Obter Ajuda no Python<a class="headerlink" href="#como-obter-ajuda-no-python" title="Link to this heading">#</a></h1>
+<section id="usando-a-funcao-help">
+<h2>1. Usando a função <code class="docutils literal notranslate"><span class="pre">help()</span></code><a class="headerlink" href="#usando-a-funcao-help" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>  <span class="c1"># Exibe informações sobre a função print</span>
+<span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>    <span class="c1"># Exibe informações sobre a classe str</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="usando-dir-para-listar-atributos-e-metodos">
+<h2>2. Usando <code class="docutils literal notranslate"><span class="pre">dir()</span></code> para listar atributos e métodos<a class="headerlink" href="#usando-dir-para-listar-atributos-e-metodos" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>  <span class="c1"># Lista todos os métodos da classe str</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="documentacao-embutida-com-doc">
+<h2>3. Documentação embutida com <code class="docutils literal notranslate"><span class="pre">.__doc__</span></code><a class="headerlink" href="#documentacao-embutida-com-doc" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>  <span class="c1"># Exibe a documentação da classe str</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">print</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>  <span class="c1"># Exibe a documentação da função print</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="usando-o-modulo-pydoc">
+<h2>4. Usando o módulo <code class="docutils literal notranslate"><span class="pre">pydoc</span></code><a class="headerlink" href="#usando-o-modulo-pydoc" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Executar no terminal:</span>
+<span class="c1"># python -m pydoc print</span>
+<span class="c1"># python -m pydoc -p 8000</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="consultando-a-documentacao-oficial">
+<h2>5. Consultando a documentação oficial<a class="headerlink" href="#consultando-a-documentacao-oficial" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://docs.python.org/pt-br/">Documentação Oficial do Python</a></p>
+</section>
+<section id="pesquisando-em-foruns-e-comunidades">
+<h2>6. Pesquisando em fóruns e comunidades<a class="headerlink" href="#pesquisando-em-foruns-e-comunidades" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://stackoverflow.com/">Stack Overflow</a></p></li>
+<li><p><a class="reference external" href="https://www.reddit.com/r/learnpython/">Reddit /r/learnpython</a></p></li>
+<li><p><a class="reference external" href="https://pythondiscord.com/">Python Discord</a></p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;42&quot;</span> <span class="o">+</span> <span class="s2">&quot;3</span>
@@ -494,6 +573,10 @@
 </div>
 </div>
 </div>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="enfrentando-erros">
+<h1>Enfrentando erros<a class="headerlink" href="#enfrentando-erros" title="Link to this heading">#</a></h1>
 <p>Se você vir a mensagem de erro SyntaxError: EOL while scaning string literal , provavelmente esqueceu o caractere de aspas simples final no final da string, como neste exemplo</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -509,12 +592,7 @@
 </div>
 </div>
 </div>
-</section>
-<section id="instalando-modulos-de-terceiros">
-<h2>Instalando Módulos de Terceiros<a class="headerlink" href="#instalando-modulos-de-terceiros" title="Link to this heading">#</a></h2>
-<p>Alguns códigos Python exigem que seu programa importe módulos. Alguns desses módulos vêm com Python, mas outros são módulos de terceiros criados por desenvolvedores fora da equipe principal de desenvolvimento do Python.</p>
 <p>É importante ter uma “mentalidade construtiva” em relação à programação – em outras palavras, entender que as pessoas desenvolvem habilidades de programação através da prática.</p>
-</section>
 <section id="inserindo-expressoes">
 <h2>Inserindo Expressões<a class="headerlink" href="#inserindo-expressoes" title="Link to this heading">#</a></h2>
 <p><img alt="alt text" src="../_images/exp.png" /></p>
@@ -560,6 +638,10 @@
 </div>
 </div>
 </div>
+</section>
+<section id="instalando-modulos-de-terceiros">
+<h2>Instalando Módulos de Terceiros<a class="headerlink" href="#instalando-modulos-de-terceiros" title="Link to this heading">#</a></h2>
+<p>Alguns códigos Python exigem que seu programa importe módulos. Alguns desses módulos vêm com Python, mas outros são módulos de terceiros criados por desenvolvedores fora da equipe principal de desenvolvimento do Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -589,6 +671,7 @@
 </div>
 </div>
 <p>Python continuará avaliando partes da expressão até que ela se torne um valor único, conforme mostrado aqui</p>
+<p><img alt="alt text" src="../_images/img04.png" /></p>
 <p><img alt="alt text" src="../_images/img04.png" /></p>
 </section>
 <section id="tipos-de-dados-inteiro-ponto-flutuante-e-string">
@@ -1130,10 +1213,23 @@ Em seus programas, um nome descritivo ajudará a tornar seu código mais legíve
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introdução a programação</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-programar">O que é programar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encontrando-ajuda">Encontrando Ajuda</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalando-modulos-de-terceiros">Instalando Módulos de Terceiros</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#como-obter-ajuda-no-python">Como Obter Ajuda no Python</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-a-funcao-help">1. Usando a função <code class="docutils literal notranslate"><span class="pre">help()</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-dir-para-listar-atributos-e-metodos">2. Usando <code class="docutils literal notranslate"><span class="pre">dir()</span></code> para listar atributos e métodos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentacao-embutida-com-doc">3. Documentação embutida com <code class="docutils literal notranslate"><span class="pre">.__doc__</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-o-modulo-pydoc">4. Usando o módulo <code class="docutils literal notranslate"><span class="pre">pydoc</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consultando-a-documentacao-oficial">5. Consultando a documentação oficial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pesquisando-em-foruns-e-comunidades">6. Pesquisando em fóruns e comunidades</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#enfrentando-erros">Enfrentando erros</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inserindo-expressoes">Inserindo Expressões</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalando-modulos-de-terceiros">Instalando Módulos de Terceiros</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precedencia">Precedência</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tipos-de-dados-inteiro-ponto-flutuante-e-string">Tipos de dados inteiro, ponto flutuante e string</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenacao-e-replicacao-de-strings">Concatenação e replicação de strings</a></li>
@@ -1148,6 +1244,9 @@ Em seus programas, um nome descritivo ajudará a tornar seu código mais legíve
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-na-engenharia-civil">Exemplo na Engenharia Civil</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>
