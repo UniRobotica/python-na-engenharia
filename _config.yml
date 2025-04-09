@@ -1,49 +1,75 @@
-# Book settings
-# Learn more at https://jupyterbook.org/customize/config.html
+name: deploy-book
 
-title: Python na Engenharia
-author: UniRobótica
-copyright: '2024'
-logo: UniRoboticaAzulSemFundo.png
+on:
+  push:
+    branches:
+      - master
+      - main
+    paths:
+      - '**/*.ipynb'
+      - '**/*.md'
+      - '_config.yml'
+      - '_toc.yml'
+  workflow_dispatch:  # Permite disparar manualmente o workflow
 
+# Define permissões necessárias
+permissions:
+  contents: read
+  pages: write
+  id-token: write
 
-# Force re-execution of notebooks on each build.
-# See https://jupyterbook.org/content/execute.html
-execute:
-  execute_notebooks: 'off'  # Não executa os notebooks durante a construção
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
-# Define the name of the latex output file for PDF builds
-latex:
-  latex_documents:
-    targetname: book.tex
-
-# Add a bibtex file so that we can create citations
-bibtex_bibfiles:
-  - references.bib
-
-# Information about where the book exists on the web
-repository:
-  url: https://github.com/UniRobotica/python-na-engenharia  # Localização online do seu livro
-  path_to_book: docs  # Caminho para o livro, relativo à raiz do repositório
-  branch: main  # Ramo do repositório a ser usado
-
-# Adiciona botões do GitHub ao seu livro
-html:
-  favicon: 'favicon.svg'
-  use_issues_button: true
-  use_repository_button: true
-  use_edit_page_button: true  # Botão para editar a página
-
-# Adiciona os notebooks à página de conteúdo
-content:
-  # Caminho para os notebooks
-  notebooks:
-    - notebooks/*  # Ou o caminho correto para os seus notebooks  # Caminho para a pasta onde estão seus notebooks
-
-# Ativa os botões para execução interativa (Thebe)
-launch_buttons:
-  thebe: true  # Ativa o Thebe para execução interativa
-  notebook_interface: "jupyterlab"  # Usa a interface JupyterLab
-
-thebe_config:
-  always_load: true
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+          cache: pip
+          
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install jupyter-book
+          
+      - name: Cache executed notebooks
+        uses: actions/cache@v3
+        with:
+          path: _build/.jupyter_cache
+          key: jupyter-book-cache-${{ hashFiles('**/*.ipynb') }}
+          
+      - name: Build the book
+        run: |
+          jupyter-book build .
+          touch _build/html/.nojekyll
+          
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: "_build/html"
+          
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Programação orientada a objetos - Parte 1 &#8212; Python na Engenharia</title>
+    <title>Programação orientada a objetos - Parte 1 &#8212; My Jupyter Book</title>
   
   
   
@@ -61,7 +61,6 @@
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/Aula11_POO_Python';</script>
-    <link rel="icon" href="../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Programação orientada a objetos - Parte 2" href="Aula12_POO_Python_pessoa.html" />
@@ -142,14 +141,8 @@
   
   
   
-    
-    
-      
-    
-    
-    <img src="../_static/UniRoboticaAzulSemFundo.png" class="logo__image only-light" alt="Python na Engenharia - Home"/>
-    <img src="../_static/UniRoboticaAzulSemFundo.png" class="logo__image only-dark pst-js-only" alt="Python na Engenharia - Home"/>
   
+    <p class="title logo__title">My Jupyter Book</p>
   
 </a></div>
         <div class="sidebar-primary-item">
@@ -228,101 +221,6 @@
         <div class="header-article-item">
 
 <div class="article-header-buttons">
-
-
-
-
-
-<div class="dropdown dropdown-launch-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
-    <i class="fas fa-rocket"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li>
-<button onclick="initThebeSBT()"
-  class="btn btn-sm btn-launch-thebe dropdown-item"
-  title="Launch Thebe"
-  data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-play"></i>
-  </span>
-<span class="btn__text-container">Live Code</span>
-</button>
-</li>
-      
-  </ul>
-</div>
-
-
-
-
-
-
-<div class="dropdown dropdown-source-buttons">
-  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
-    <i class="fab fa-github"></i>
-  </button>
-  <ul class="dropdown-menu">
-      
-      
-      
-      <li><a href="https://github.com/UniRobotica/python-na-engenharia" target="_blank"
-   class="btn btn-sm btn-source-repository-button dropdown-item"
-   title="Source repository"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="btn__text-container">Repository</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/UniRobotica/python-na-engenharia/edit/main/docs/notebooks/Aula11_POO_Python.ipynb" target="_blank"
-   class="btn btn-sm btn-source-edit-button dropdown-item"
-   title="Suggest edit"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-pencil-alt"></i>
-  </span>
-<span class="btn__text-container">Suggest edit</span>
-</a>
-</li>
-      
-      
-      
-      
-      <li><a href="https://github.com/UniRobotica/python-na-engenharia/issues/new?title=Issue%20on%20page%20%2Fnotebooks/Aula11_POO_Python.html&body=Your%20issue%20content%20here." target="_blank"
-   class="btn btn-sm btn-source-issues-button dropdown-item"
-   title="Open an issue"
-   data-bs-placement="left" data-bs-toggle="tooltip"
->
-  
-
-<span class="btn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="btn__text-container">Open issue</span>
-</a>
-</li>
-      
-  </ul>
-</div>
-
 
 
 
@@ -460,6 +358,14 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+140734622671944
+140734622671944
+140734622671944
+</pre></div>
+</div>
+</div>
 </div>
 <p>Em computação, criar um objeto significa criar uma instância de uma classe.</p>
 <p>Linguagens orientadas a objetos permitem a definição de novas classes.</p>
@@ -515,6 +421,14 @@
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;fusca.ano = &quot;</span><span class="p">,</span> <span class="n">fusca</span><span class="o">.</span><span class="n">ano</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;novo_fusca.ano = &quot;</span><span class="p">,</span> <span class="n">novo_fusca</span><span class="o">.</span><span class="n">ano</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fusca igual a brasilia? &gt;  False
+Fusca igual a novo_fusca? &gt;  True
+fusca.ano =  1978
+novo_fusca.ano =  1978
 </pre></div>
 </div>
 </div>
@@ -959,8 +873,8 @@ True
     {
         requestKernel: true,
         binderOptions: {
-            repo: "UniRobotica/python-na-engenharia",
-            ref: "main",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -1045,7 +959,7 @@ True
   <div class="footer-item">
     
 <p class="component-author">
-By UniRobótica
+By The Jupyter Book community
 </p>
 
   </div>
@@ -1055,7 +969,7 @@ By UniRobótica
 
   <p class="copyright">
     
-      © Copyright 2024.
+      © Copyright 2023.
       <br/>
     
   </p>
