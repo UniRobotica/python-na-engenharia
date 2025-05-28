@@ -65,7 +65,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Funções" href="Aula4_Fun%C3%A7%C3%B5es.html" />
-    <link rel="prev" title="Controle de Fluxo" href="Aula2_ControleFluxo.html" />
+    <link rel="prev" title="CONTROLE DE FLUXO" href="Aula2_ControleFluxo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   <meta name="docsearch:version" content="" />
@@ -173,8 +173,30 @@
 <li class="toctree-l1"><a class="reference internal" href="Aula1_ConceitosBasicos.html">Introdução a programação</a></li>
 
 
-<li class="toctree-l1"><a class="reference internal" href="Aula2_ControleFluxo.html">Controle de Fluxo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula2_ControleFluxo.html">CONTROLE DE FLUXO</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Importando Módulos</a></li>
+
+
+
+
+
+
 <li class="toctree-l1"><a class="reference internal" href="Aula4_Fun%C3%A7%C3%B5es.html">Funções</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula5_CriandoModulos.html">Criando módulos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula6_ExemploAplicacao.html">Exemplo de aplicação 1</a></li>
@@ -187,6 +209,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Aula13_POO_PythonSelf.html">Programação orientada a objetos - Parte 3</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula14_POO_EngCivil.html">Programação Orientada a Objetos (POO) - exemplo em Engenharia Civil</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Pratica1_AtividadeFluxoDecisao.html">Atividade Prática – Programação com Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pratica2_OrcamentoEquipes.html">Atividade Prática - Simulação de Orçamento de Fundação</a></li>
 </ul>
 
     </div>
@@ -422,19 +445,21 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encerrando-um-programa-antecipadamente-com-a-funcao-sys-exit">Encerrando um programa antecipadamente com a função sys.exit()</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#um-programa-curto-adivinhe-o-numero">Um programa curto: Adivinhe o número</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#renomeando-modulos">Renomeando módulos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao-das-bibliotecas-de-python">Classificação das bibliotecas de Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importacao-de-bibliotecas-externas">Importação de bibliotecas externas</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">Numpy</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">Pandas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">Matplotlib</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Importando Módulos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#encerrando-um-programa-antecipadamente-com-a-funcao-sys-exit">Encerrando um programa antecipadamente com a função sys.exit()</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#um-programa-curto-adivinhe-o-numero">Um programa curto: Adivinhe o número</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#renomeando-modulos">Renomeando módulos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao-das-bibliotecas-de-python">Classificação das bibliotecas de Python</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#importacao-de-bibliotecas-externas">Importação de bibliotecas externas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">Numpy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">Matplotlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotecas-muito-utilizadas">Bibliotecas Muito Utilizadas</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotecas-muito-utilizadas">Bibliotecas Muito Utilizadas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-pratico-de-uso-na-engenharia-civil">Exemplo Prático de Uso na Engenharia Civil</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-pratico-de-uso-na-engenharia-civil">Exemplo Prático de Uso na Engenharia Civil</a></li>
 </ul>
+
             </nav>
         </div>
     </div>
@@ -445,7 +470,14 @@
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="importando-modulos">
+  <ul class="simple">
+<li><p><a class="reference internal" href="Aula2_ControleFluxo.html"><span class="std std-doc">Aula Anterior</span></a> | <a class="reference internal" href="Aula4_Fun%C3%A7%C3%B5es.html"><span class="std std-doc">Próxima Aula</span></a></p></li>
+</ul>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula3_ImportandoModulos.ipynb">Link da aula no GitHub</a></p></li>
+<li><p><a class="reference external" href="https://colab.research.google.com/github/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula3_ImportandoModulos.ipynb">Link da aula no Colab</a></p></li>
+</ul>
+<section class="tex2jax_ignore mathjax_ignore" id="importando-modulos">
 <h1>Importando Módulos<a class="headerlink" href="#importando-modulos" title="Link to this heading">#</a></h1>
 <p>Todos os programas Python podem chamar um conjunto básico de funções chamadas funções integradas , incluindo as funções print() , input() e len() que você já viu antes.</p>
 <p>Python também vem com um conjunto de módulos chamado biblioteca padrão . Cada módulo é um programa Python que contém um grupo relacionado de funções que podem ser incorporadas em seus programas. Por exemplo, o módulo “math” possui funções relacionadas à matemática, o módulo aleatório possui funções relacionadas a números aleatórios e assim por diante.</p>
@@ -468,8 +500,9 @@
 <blockquote>
 <div><p>Ao salvar seus scripts Python, tome cuidado para não dar a eles um nome que seja usado por um dos módulos do Python, como <a class="reference external" href="http://random.py">random.py</a> , <a class="reference external" href="http://sys.py">sys.py</a> , <a class="reference external" href="http://os.py">os.py</a> ou <a class="reference external" href="http://math.py">math.py</a> . Se você acidentalmente nomear um de seus programas, digamos, <a class="reference external" href="http://random.py">random.py</a> , e usar uma instrução import random em outro programa, seu programa importaria seu arquivo <a class="reference external" href="http://random.py">random.py</a> em vez do módulo aleatório do Python . Isso pode levar a erros como AttributeError: module ‘random’ has no attribute ‘randint’ , já que seu <a class="reference external" href="http://random.py">random.py</a> não possui as funções que o módulo aleatório real possui. Também não use os nomes de nenhuma função interna do Python, como print() ou input() .</p>
 </div></blockquote>
-<section id="encerrando-um-programa-antecipadamente-com-a-funcao-sys-exit">
-<h2>Encerrando um programa antecipadamente com a função sys.exit()<a class="headerlink" href="#encerrando-um-programa-antecipadamente-com-a-funcao-sys-exit" title="Link to this heading">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="encerrando-um-programa-antecipadamente-com-a-funcao-sys-exit">
+<h1>Encerrando um programa antecipadamente com a função sys.exit()<a class="headerlink" href="#encerrando-um-programa-antecipadamente-com-a-funcao-sys-exit" title="Link to this heading">#</a></h1>
 <p>Os programas sempre terminam se a execução do programa atingir o final das instruções. No entanto, você pode fazer com que o programa seja encerrado ou encerrado antes da última instrução chamando a função sys.exit() . Como esta função está no módulo sys , você deve importar sys antes que seu programa possa usá-la.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -493,8 +526,8 @@
 </div>
 </div>
 </section>
-<section id="um-programa-curto-adivinhe-o-numero">
-<h2>Um programa curto: Adivinhe o número<a class="headerlink" href="#um-programa-curto-adivinhe-o-numero" title="Link to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="um-programa-curto-adivinhe-o-numero">
+<h1>Um programa curto: Adivinhe o número<a class="headerlink" href="#um-programa-curto-adivinhe-o-numero" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Este é um jogo de adivinhação de um número</span>
@@ -566,8 +599,8 @@
 </div>
 </div>
 </section>
-<section id="renomeando-modulos">
-<h2>Renomeando módulos<a class="headerlink" href="#renomeando-modulos" title="Link to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="renomeando-modulos">
+<h1>Renomeando módulos<a class="headerlink" href="#renomeando-modulos" title="Link to this heading">#</a></h1>
 <p>Uma outra forma de importar módulos é renomeando-o. Observe novamente o exemplo do fatorial:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -580,8 +613,8 @@
 </div>
 </div>
 </section>
-<section id="classificacao-das-bibliotecas-de-python">
-<h2>Classificação das bibliotecas de Python<a class="headerlink" href="#classificacao-das-bibliotecas-de-python" title="Link to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="classificacao-das-bibliotecas-de-python">
+<h1>Classificação das bibliotecas de Python<a class="headerlink" href="#classificacao-das-bibliotecas-de-python" title="Link to this heading">#</a></h1>
 <p>Essas bibliotecas podem ser classificadas em pelo menos 06 tipos diferentes, sendo eles: Processamento de dados, Visualização de dados, Aprendizado de máquina, Web Scraping (extração de informações da web), Geração de números aleatórios e Processamento de linguagem.</p>
 <p>Bibliotecas de processamento de dados: Pandas, Numpy, etc. Essas bibliotecas são usadas para manipular e processar dados em formato tabular ou matricial.</p>
 <p>Bibliotecas de visualização de dados: Matplotlib, Seaborn, etc. Essas bibliotecas são usadas para criar gráficos e visualizações de dados para ajudar na análise e interpretação dos dados.</p>
@@ -591,11 +624,11 @@
 <p>Bibliotecas de processamento de linguagem natural: NLTK, SpaCy, PyDictionary, etc. Essas bibliotecas são usadas para processar texto e realizar tarefas de processamento de linguagem natural, como análise de sentimentos e extração de informações.</p>
 <p>Outras bibliotecas mais específicas: Flask, PYGame, PyAutoGui, PyOD, Pyglet, etc. Cada uma dessas bibliotecas são usadas para uma finalidade específica, tais quais criar APIS, desenvolver jogos, realizar tarefas de automação, detectar valores e criar aplicativos interativos.</p>
 </section>
-<section id="importacao-de-bibliotecas-externas">
-<h2>Importação de bibliotecas externas<a class="headerlink" href="#importacao-de-bibliotecas-externas" title="Link to this heading">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="importacao-de-bibliotecas-externas">
+<h1>Importação de bibliotecas externas<a class="headerlink" href="#importacao-de-bibliotecas-externas" title="Link to this heading">#</a></h1>
 <p>Além dos módulos que fazem parte da biblioteca padrão do Python, existem diversas bibliotecas externas que podem ser instaladas e importadas para adicionar funcionalidades extras ao seu código.</p>
 <section id="numpy">
-<h3>Numpy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h3>
+<h2>Numpy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h2>
 <p>Com o <strong>numpy</strong> você consegue trabalhar com arrays multidimensionais, ou seja, matrizes. Desta forma, é possivel realizar operações matriciais como multiplicação ou soma de matrizes.
 </br>
 </br>
@@ -719,7 +752,7 @@ Raiz quadrada do array2  :  [2.44948974 3.16227766 4.24264069]
 </div>
 </section>
 <section id="pandas">
-<h3>Pandas<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h3>
+<h2>Pandas<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h2>
 <p>Com a biblioteca pandas é possivel criar tabelas e manipular os dados contidos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -758,7 +791,7 @@ Raiz quadrada do array2  :  [2.44948974 3.16227766 4.24264069]
 </div>
 </section>
 <section id="matplotlib">
-<h3>Matplotlib<a class="headerlink" href="#matplotlib" title="Link to this heading">#</a></h3>
+<h2>Matplotlib<a class="headerlink" href="#matplotlib" title="Link to this heading">#</a></h2>
 <p>No exemplo a seguir podemos visualizar dados através de gráficos utilizando a biblioteca <strong>matplotlib</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -776,7 +809,6 @@ Raiz quadrada do array2  :  [2.44948974 3.16227766 4.24264069]
 </div>
 </div>
 </section>
-</section>
 <section id="bibliotecas-muito-utilizadas">
 <h2>Bibliotecas Muito Utilizadas<a class="headerlink" href="#bibliotecas-muito-utilizadas" title="Link to this heading">#</a></h2>
 <p>NumPy: Biblioteca para cálculos numéricos e manipulação de arrays multidimensionais.</p>
@@ -791,11 +823,13 @@ Raiz quadrada do array2  :  [2.44948974 3.16227766 4.24264069]
 <p>Um módulo é um arquivo contendo definições e instruções Python que podem ser importadas e utilizadas em outros programas.</p>
 <p>Uma biblioteca em Python é um conjunto de módulos e funções pré-definidos que podem ser utilizados para facilitar o desenvolvimento de programas. Em outras palavras, é um conjunto de código que já foi escrito e pode ser reutilizado em diferentes projetos.</p>
 </section>
-<section id="exemplo-pratico-de-uso-na-engenharia-civil">
-<h2>Exemplo Prático de Uso na Engenharia Civil<a class="headerlink" href="#exemplo-pratico-de-uso-na-engenharia-civil" title="Link to this heading">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="exemplo-pratico-de-uso-na-engenharia-civil">
+<h1>Exemplo Prático de Uso na Engenharia Civil<a class="headerlink" href="#exemplo-pratico-de-uso-na-engenharia-civil" title="Link to this heading">#</a></h1>
 <p>Podemos utilizar o PyCBA para fazer análises em uma dimensão de vigas. O seguinte exemplo foi retirado da documentação oficial do <a class="reference external" href="https://ccaprani.github.io/pycba/notebooks/intro.html">PyCBA</a>.</p>
 <p>Vamos analisar uma viga de dois vãos, com as cargas distribuidas uniformente (UDL) em cada vão.</p>
-<p><img alt="image" src="../_images/exemplo_viga.png" /></p>
+<img src="../Figuras/aula03/exemplo_viga.png" width="700">
+<br/>
 <p>Inicialmente, definimos os comprimentos dos membros, que neste caso coincidem com os vãos, AB e BC.</p>
 <p>A rigidez à flexão (módulo de elasticidade multiplicado pelo segundo momento da área) pode ser definida para cada membro ou, se um valor escalar for passado, ele será atribuído a todos os membros. Aqui, pegamos E=30 GPa (módulo da elasticidade) e I=600×10<sup>7</sup> mm<sup>4</sup> (momento de inercia) e aplicamos uma conversão para colocá-lo em um conjunto consistente de unidades (kN e m).</p>
 <p>As restrições da viga em cada grau de liberdade nodal então definidas. Como há três nós, este será um vetor de 2 × 3 = 6 entradas. Apenas o grau de liberdade vertical (e não rotacional) é restringido nos nós A, B e C, e, portanto, isso é indicado usando -1 e 0 para irrestrito.</p>
@@ -841,7 +875,9 @@ Raiz quadrada do array2  :  [2.44948974 3.16227766 4.24264069]
 <img alt="../_images/f1be15a35cb51d58686faab0006bf4843c294446e66742c674b4f2668c3111a0.png" src="../_images/f1be15a35cb51d58686faab0006bf4843c294446e66742c674b4f2668c3111a0.png" />
 </div>
 </div>
-</section>
+<ul class="simple">
+<li><p><a class="reference internal" href="Aula2_ControleFluxo.html"><span class="std std-doc">Aula Anterior</span></a> | <a class="reference internal" href="Aula4_Fun%C3%A7%C3%B5es.html"><span class="std std-doc">Próxima Aula</span></a></p></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -880,7 +916,7 @@ Raiz quadrada do array2  :  [2.44948974 3.16227766 4.24264069]
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Controle de Fluxo</p>
+        <p class="prev-next-title">CONTROLE DE FLUXO</p>
       </div>
     </a>
     <a class="right-next"
@@ -909,19 +945,21 @@ Raiz quadrada do array2  :  [2.44948974 3.16227766 4.24264069]
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encerrando-um-programa-antecipadamente-com-a-funcao-sys-exit">Encerrando um programa antecipadamente com a função sys.exit()</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#um-programa-curto-adivinhe-o-numero">Um programa curto: Adivinhe o número</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#renomeando-modulos">Renomeando módulos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao-das-bibliotecas-de-python">Classificação das bibliotecas de Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importacao-de-bibliotecas-externas">Importação de bibliotecas externas</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">Numpy</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">Pandas</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">Matplotlib</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Importando Módulos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#encerrando-um-programa-antecipadamente-com-a-funcao-sys-exit">Encerrando um programa antecipadamente com a função sys.exit()</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#um-programa-curto-adivinhe-o-numero">Um programa curto: Adivinhe o número</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#renomeando-modulos">Renomeando módulos</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao-das-bibliotecas-de-python">Classificação das bibliotecas de Python</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#importacao-de-bibliotecas-externas">Importação de bibliotecas externas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">Numpy</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">Matplotlib</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotecas-muito-utilizadas">Bibliotecas Muito Utilizadas</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotecas-muito-utilizadas">Bibliotecas Muito Utilizadas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-pratico-de-uso-na-engenharia-civil">Exemplo Prático de Uso na Engenharia Civil</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-pratico-de-uso-na-engenharia-civil">Exemplo Prático de Uso na Engenharia Civil</a></li>
 </ul>
+
   </nav></div>
 
 </div></div>
