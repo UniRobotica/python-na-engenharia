@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -64,11 +61,10 @@
     <link rel="icon" href="../_static/favicon.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="CONTROLE DE FLUXO" href="Aula2_ControleFluxo.html" />
+    <link rel="next" title="Controle de Fluxo" href="Aula2_ControleFluxo.html" />
     <link rel="prev" title="Python na Engenharia" href="../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -84,8 +80,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -93,6 +100,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -100,8 +108,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -117,8 +125,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -148,17 +155,21 @@
     
     
     <img src="../_static/UniRoboticaAzulSemFundo.png" class="logo__image only-light" alt="Python na Engenharia - Home"/>
-    <img src="../_static/UniRoboticaAzulSemFundo.png" class="logo__image only-dark pst-js-only" alt="Python na Engenharia - Home"/>
+    <script>document.write(`<img src="../_static/UniRoboticaAzulSemFundo.png" class="logo__image only-dark" alt="Python na Engenharia - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -171,35 +182,11 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introdução a programação</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="Aula2_ControleFluxo.html">CONTROLE DE FLUXO</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="Aula2_ControleFluxo.html">Controle de Fluxo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula3_ImportandoModulos.html">Importando Módulos</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula4_Fun%C3%A7%C3%B5es.html">Funções</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula5_CriandoModulos.html">Criando módulos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Aula6_ExemploAplicacao.html">Exemplo de aplicação 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula6_ExemploAplicacao.html">Exemplo de aplicação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula7_ContEscopoExec.html">Contole de escopo de execução</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula8_Listas.html">Listas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula9_Listas2.html">Métodos</a></li>
@@ -211,6 +198,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Pratica1_AtividadeFluxoDecisao.html">Atividade Prática – Programação com Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Pratica2_OrcamentoEquipes.html">Atividade Prática - Simulação de Orçamento de Fundação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Pratica3_ModRedesPetriLugarTransicao.html">Atividade: Modelagem e Simulação de um Processo Construtivo com Redes de Petri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CPP/CppCap1.html">C++ — Cap. 1: C++ Básico</a></li>
 </ul>
 
     </div>
@@ -413,16 +401,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -446,21 +442,18 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introdução a programação</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-programar">O que é programar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encontrando-ajuda">Encontrando Ajuda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-obter-ajuda-no-python">Como Obter Ajuda no Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-a-funcao-help">1. Usando a função <code class="docutils literal notranslate"><span class="pre">help()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-dir-para-listar-atributos-e-metodos">2. Usando <code class="docutils literal notranslate"><span class="pre">dir()</span></code> para listar atributos e métodos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentacao-embutida-com-doc">3. Documentação embutida com <code class="docutils literal notranslate"><span class="pre">.__doc__</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-o-modulo-pydoc">4. Usando o módulo <code class="docutils literal notranslate"><span class="pre">pydoc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consultando-a-documentacao-oficial">5. Consultando a documentação oficial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pesquisando-em-foruns-e-comunidades">6. Pesquisando em fóruns e comunidades</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#como-obter-ajuda-no-python">Como Obter Ajuda no Python</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-a-funcao-help">1. Usando a função <code class="docutils literal notranslate"><span class="pre">help()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-dir-para-listar-atributos-e-metodos">2. Usando <code class="docutils literal notranslate"><span class="pre">dir()</span></code> para listar atributos e métodos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentacao-embutida-com-doc">3. Documentação embutida com <code class="docutils literal notranslate"><span class="pre">.__doc__</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-o-modulo-pydoc">4. Usando o módulo <code class="docutils literal notranslate"><span class="pre">pydoc</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consultando-a-documentacao-oficial">5. Consultando a documentação oficial</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pesquisando-em-foruns-e-comunidades">6. Pesquisando em fóruns e comunidades</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#enfrentando-erros">Enfrentando erros</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enfrentando-erros">Enfrentando erros</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inserindo-expressoes">Inserindo Expressões</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalando-modulos-de-terceiros">Instalando Módulos de Terceiros</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precedencia">Precedência</a></li>
@@ -477,9 +470,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-na-engenharia-civil">Exemplo na Engenharia Civil</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
 </ul>
-</li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -513,10 +503,16 @@
    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Access granted&#39;</span><span class="p">)</span>
    <span class="k">if</span> <span class="n">typedPassword</span> <span class="o">==</span> <span class="s1">&#39;12345&#39;</span><span class="p">:</span>
       <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;That password is very easy.&#39;</span><span class="p">)</span>
-   <span class="k">elif</span> <span class="n">typedPassword</span> <span class="o">==</span> <span class="s1">&#39;cpd066&#39;</span><span class="p">:</span>
-      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Computação Aplicada.&#39;</span><span class="p">)</span>
+   <span class="k">elif</span> <span class="n">typedPassword</span> <span class="o">==</span> <span class="s1">&#39;cpd068&#39;</span><span class="p">:</span>
+      <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Informatica Aplicada.&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
       <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Access denied&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Enter your password.
+Access denied
 </pre></div>
 </div>
 </div>
@@ -532,22 +528,27 @@
 <h2>Encontrando Ajuda<a class="headerlink" href="#encontrando-ajuda" title="Link to this heading">#</a></h2>
 <p>Por exemplo, vamos causar um erro propositalmente</p>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="como-obter-ajuda-no-python">
-<h1>Como Obter Ajuda no Python<a class="headerlink" href="#como-obter-ajuda-no-python" title="Link to this heading">#</a></h1>
+<section id="como-obter-ajuda-no-python">
+<h2>Como Obter Ajuda no Python<a class="headerlink" href="#como-obter-ajuda-no-python" title="Link to this heading">#</a></h2>
 <section id="usando-a-funcao-help">
-<h2>1. Usando a função <code class="docutils literal notranslate"><span class="pre">help()</span></code><a class="headerlink" href="#usando-a-funcao-help" title="Link to this heading">#</a></h2>
+<h3>1. Usando a função <code class="docutils literal notranslate"><span class="pre">help()</span></code><a class="headerlink" href="#usando-a-funcao-help" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>  <span class="c1"># Exibe informações sobre a função print</span>
-<span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>    <span class="c1"># Exibe informações sobre a classe str</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">str</span><span class="p">)</span>    <span class="c1"># Exibe informações sobre a classe str</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="usando-dir-para-listar-atributos-e-metodos">
-<h2>2. Usando <code class="docutils literal notranslate"><span class="pre">dir()</span></code> para listar atributos e métodos<a class="headerlink" href="#usando-dir-para-listar-atributos-e-metodos" title="Link to this heading">#</a></h2>
+<h3>2. Usando <code class="docutils literal notranslate"><span class="pre">dir()</span></code> para listar atributos e métodos<a class="headerlink" href="#usando-dir-para-listar-atributos-e-metodos" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">dir</span><span class="p">(</span><span class="nb">str</span><span class="p">))</span>  <span class="c1"># Lista todos os métodos da classe str</span>
@@ -557,18 +558,24 @@
 </div>
 </section>
 <section id="documentacao-embutida-com-doc">
-<h2>3. Documentação embutida com <code class="docutils literal notranslate"><span class="pre">.__doc__</span></code><a class="headerlink" href="#documentacao-embutida-com-doc" title="Link to this heading">#</a></h2>
+<h3>3. Documentação embutida com <code class="docutils literal notranslate"><span class="pre">.__doc__</span></code><a class="headerlink" href="#documentacao-embutida-com-doc" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>  <span class="c1"># Exibe a documentação da classe str</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">print</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>  <span class="c1"># Exibe a documentação da função print</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">print</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>  <span class="c1"># Exibe a documentação da função print</span>
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="usando-o-modulo-pydoc">
-<h2>4. Usando o módulo <code class="docutils literal notranslate"><span class="pre">pydoc</span></code><a class="headerlink" href="#usando-o-modulo-pydoc" title="Link to this heading">#</a></h2>
+<h3>4. Usando o módulo <code class="docutils literal notranslate"><span class="pre">pydoc</span></code><a class="headerlink" href="#usando-o-modulo-pydoc" title="Link to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Executar no terminal:</span>
@@ -580,11 +587,11 @@
 </div>
 </section>
 <section id="consultando-a-documentacao-oficial">
-<h2>5. Consultando a documentação oficial<a class="headerlink" href="#consultando-a-documentacao-oficial" title="Link to this heading">#</a></h2>
+<h3>5. Consultando a documentação oficial<a class="headerlink" href="#consultando-a-documentacao-oficial" title="Link to this heading">#</a></h3>
 <p><a class="reference external" href="https://docs.python.org/pt-br/">Documentação Oficial do Python</a></p>
 </section>
 <section id="pesquisando-em-foruns-e-comunidades">
-<h2>6. Pesquisando em fóruns e comunidades<a class="headerlink" href="#pesquisando-em-foruns-e-comunidades" title="Link to this heading">#</a></h2>
+<h3>6. Pesquisando em fóruns e comunidades<a class="headerlink" href="#pesquisando-em-foruns-e-comunidades" title="Link to this heading">#</a></h3>
 <ul class="simple">
 <li><p><a class="reference external" href="https://stackoverflow.com/">Stack Overflow</a></p></li>
 <li><p><a class="reference external" href="https://www.reddit.com/r/learnpython/">Reddit /r/learnpython</a></p></li>
@@ -592,19 +599,34 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;42&quot;</span> <span class="o">+</span> <span class="s2">&quot;3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;42&quot;</span> <span class="o">+</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="s2">&quot;42&quot;</span> <span class="o">+</span> <span class="mi">3</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="enfrentando-erros">
-<h1>Enfrentando erros<a class="headerlink" href="#enfrentando-erros" title="Link to this heading">#</a></h1>
+<section id="enfrentando-erros">
+<h2>Enfrentando erros<a class="headerlink" href="#enfrentando-erros" title="Link to this heading">#</a></h2>
 <p>Se você vir a mensagem de erro SyntaxError: EOL while scaning string literal , provavelmente esqueceu o caractere de aspas simples final no final da string, como neste exemplo</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Ola Mundo&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Ola Mundo&#39;
 </pre></div>
 </div>
 </div>
@@ -615,14 +637,37 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Ola Mundo
+</pre></div>
+</div>
+</div>
 </div>
 <p>É importante ter uma “mentalidade construtiva” em relação à programação – em outras palavras, entender que as pessoas desenvolvem habilidades de programação através da prática.</p>
+</section>
 <section id="inserindo-expressoes">
 <h2>Inserindo Expressões<a class="headerlink" href="#inserindo-expressoes" title="Link to this heading">#</a></h2>
 <p><img alt="alt text" src="../_images/exp.png" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">22</span> <span class="o">%</span> <span class="mi">8</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="mi">6</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>20
 </pre></div>
 </div>
 </div>
@@ -633,10 +678,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>256
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">23</span> <span class="o">/</span> <span class="mi">7</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.2857142857142856
 </pre></div>
 </div>
 </div>
@@ -647,10 +702,20 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">23</span> <span class="o">%</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -661,6 +726,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="instalando-modulos-de-terceiros">
@@ -668,8 +738,13 @@
 <p>Alguns códigos Python exigem que seu programa importe módulos. Alguns desses módulos vêm com Python, mas outros são módulos de terceiros criados por desenvolvedores fora da equipe principal de desenvolvimento do Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.47213595499958
 </pre></div>
 </div>
 </div>
@@ -710,10 +785,25 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;AliceBob&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Alice&#39;</span> <span class="o">+</span> <span class="mi">42</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;Alice&#39;</span> <span class="o">+</span> <span class="mi">42</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
 </pre></div>
 </div>
 </div>
@@ -739,7 +829,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="s1">&#39;Alice&#39;</span> <span class="o">*</span> <span class="mf">5.0</span>
 
 <span class="ne">TypeError</span>: can&#39;t multiply sequence by non-int of type &#39;float&#39;
@@ -758,6 +848,23 @@
 <p>Você armazenará valores em variáveis ​​com uma instrução de atribuição . Uma instrução de atribuição consiste em um nome de variável, um sinal de igual (chamado operador de atribuição ) e o valor a ser armazenado. Se você inserir a instrução de atribuição spam = 42 , então uma variável chamada spam terá o valor inteiro 42 armazenado nela.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">spam</span>
+
+<span class="ne">NameError</span>: name &#39;spam&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span> <span class="o">=</span> <span class="mi">42</span>
 </pre></div>
 </div>
@@ -766,6 +873,11 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
 </pre></div>
 </div>
 </div>
@@ -790,6 +902,11 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44
+</pre></div>
+</div>
+</div>
 </div>
 <p>Uma variável é inicializada (ou criada) na primeira vez que um valor é armazenado nela. Depois disso, você poderá utilizá-lo em expressões com outras variáveis ​​e valores . Quando um novo valor é atribuído a uma variável , o valor antigo é esquecido. Isso é chamado de sobrescrever a variável.</p>
 <div class="cell docutils container">
@@ -798,11 +915,27 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>86
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span> <span class="o">=</span> <span class="n">spam</span> <span class="o">+</span> <span class="mi">2</span>
-<span class="n">spam</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>44
 </pre></div>
 </div>
 </div>
@@ -810,7 +943,18 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span> <span class="o">=</span> <span class="s1">&#39;Hello&#39;</span>
-<span class="n">spam</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Hello&#39;
 </pre></div>
 </div>
 </div>
@@ -823,11 +967,21 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;Goodbye&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
 <span class="n">spam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;computacao aplicada&#39;
 </pre></div>
 </div>
 </div>
@@ -839,10 +993,25 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;computacao aplicada à engenharia&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span> <span class="o">=</span> <span class="n">spam</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">49</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">spam</span> <span class="o">=</span> <span class="n">spam</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
 </pre></div>
 </div>
 </div>
@@ -860,10 +1029,44 @@
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;10&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span> <span class="o">=</span> <span class="n">spam</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">58</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">spam</span> <span class="o">=</span> <span class="n">spam</span> <span class="o">+</span> <span class="mi">1</span>
+
+<span class="ne">TypeError</span>: can only concatenate str (not &quot;int&quot;) to str
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">spam</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
 </pre></div>
 </div>
 </div>
@@ -886,7 +1089,12 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="mf">.70975858858</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="mf">4.70975858858</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 </pre></div>
 </div>
 </div>
@@ -902,6 +1110,11 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">num2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21
 </pre></div>
 </div>
 </div>
@@ -932,6 +1145,13 @@ Em seus programas, um nome descritivo ajudará a tornar seu código mais legíve
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello, world!
+robson
+Hello, world robson!
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 <section id="a-funcao-print">
@@ -943,11 +1163,21 @@ Em seus programas, um nome descritivo ajudará a tornar seu código mais legíve
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It is good to meet you, robson
+</pre></div>
+</div>
+</div>
 </div>
 <p>Quando Python executa esta linha, você diz que Python está chamando a função print() e o valor da string está sendo passado para a função. Um valor passado para uma chamada de função é um argumento . Notar que as cotas (aspas) não são impressas na tela. Eles apenas marcam onde a string começa e termina; eles não fazem parte do valor da string.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;It is good to meet you, &#39;</span><span class="p">,</span> <span class="n">myName</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>It is good to meet you,  robson
 </pre></div>
 </div>
 </div>
@@ -961,6 +1191,13 @@ Em seus programas, um nome descritivo ajudará a tornar seu código mais legíve
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The length of your name is:&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">myName</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The length of your name is:
+
+6
 </pre></div>
 </div>
 </div>
@@ -978,6 +1215,12 @@ Em seus programas, um nome descritivo ajudará a tornar seu código mais legíve
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;What is your age?&#39;</span><span class="p">)</span>    <span class="c1"># ask for their age</span>
 <span class="n">myAge</span> <span class="o">=</span> <span class="nb">input</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You will be &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">myAge</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; in a year.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>What is your age?
+You will be 41 in a year.
 </pre></div>
 </div>
 </div>
@@ -999,10 +1242,20 @@ Em seus programas, um nome descritivo ajudará a tornar seu código mais legíve
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>11
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;spam&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;spam&#39;
 </pre></div>
 </div>
 </div>
@@ -1013,10 +1266,20 @@ Em seus programas, um nome descritivo ajudará a tornar seu código mais legíve
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;0&#39;
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="o">-</span><span class="mf">3.14</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;-3.14&#39;
 </pre></div>
 </div>
 </div>
@@ -1027,10 +1290,20 @@ Em seus programas, um nome descritivo ajudará a tornar seu código mais legíve
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;-99&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-99
 </pre></div>
 </div>
 </div>
@@ -1041,6 +1314,26 @@ Em seus programas, um nome descritivo ajudará a tornar seu código mais legíve
 <span class="c1">#int(1.99)</span>
 <span class="c1">#float(&#39;3.14&#39;)</span>
 <span class="nb">float</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="mf">1.25</span><span class="p">)</span>
+<span class="c1">#int(1.99)</span>
+<span class="c1">#float(&#39;3.14&#39;)</span>
+<span class="c1">#float(10)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
 </pre></div>
 </div>
 </div>
@@ -1094,10 +1387,20 @@ Em seus programas, um nome descritivo ajudará a tornar seu código mais legíve
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span> <span class="o">==</span> <span class="mf">42.0</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -1216,7 +1519,7 @@ Em seus programas, um nome descritivo ajudará a tornar seu código mais legíve
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">CONTROLE DE FLUXO</p>
+        <p class="prev-next-title">Controle de Fluxo</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1227,8 +1530,7 @@ Em seus programas, um nome descritivo ajudará a tornar seu código mais legíve
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1237,21 +1539,18 @@ Em seus programas, um nome descritivo ajudará a tornar seu código mais legíve
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introdução a programação</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#o-que-e-programar">O que é programar</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encontrando-ajuda">Encontrando Ajuda</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#como-obter-ajuda-no-python">Como Obter Ajuda no Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-a-funcao-help">1. Usando a função <code class="docutils literal notranslate"><span class="pre">help()</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-dir-para-listar-atributos-e-metodos">2. Usando <code class="docutils literal notranslate"><span class="pre">dir()</span></code> para listar atributos e métodos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#documentacao-embutida-com-doc">3. Documentação embutida com <code class="docutils literal notranslate"><span class="pre">.__doc__</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-o-modulo-pydoc">4. Usando o módulo <code class="docutils literal notranslate"><span class="pre">pydoc</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#consultando-a-documentacao-oficial">5. Consultando a documentação oficial</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pesquisando-em-foruns-e-comunidades">6. Pesquisando em fóruns e comunidades</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#como-obter-ajuda-no-python">Como Obter Ajuda no Python</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-a-funcao-help">1. Usando a função <code class="docutils literal notranslate"><span class="pre">help()</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-dir-para-listar-atributos-e-metodos">2. Usando <code class="docutils literal notranslate"><span class="pre">dir()</span></code> para listar atributos e métodos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#documentacao-embutida-com-doc">3. Documentação embutida com <code class="docutils literal notranslate"><span class="pre">.__doc__</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#usando-o-modulo-pydoc">4. Usando o módulo <code class="docutils literal notranslate"><span class="pre">pydoc</span></code></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#consultando-a-documentacao-oficial">5. Consultando a documentação oficial</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pesquisando-em-foruns-e-comunidades">6. Pesquisando em fóruns e comunidades</a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#enfrentando-erros">Enfrentando erros</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#enfrentando-erros">Enfrentando erros</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#inserindo-expressoes">Inserindo Expressões</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#instalando-modulos-de-terceiros">Instalando Módulos de Terceiros</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precedencia">Precedência</a></li>
@@ -1268,9 +1567,6 @@ Em seus programas, um nome descritivo ajudará a tornar seu código mais legíve
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-na-engenharia-civil">Exemplo na Engenharia Civil</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#referencias">Referências</a></li>
 </ul>
-</li>
-</ul>
-
   </nav></div>
 
 </div></div>
@@ -1318,8 +1614,8 @@ By UniRobótica
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

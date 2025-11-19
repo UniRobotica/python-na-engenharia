@@ -1,0 +1,1 @@
+jupyter-book clean . && jupyter-book build . && start _build/html/index.html
