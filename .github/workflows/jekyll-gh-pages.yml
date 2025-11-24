@@ -10,7 +10,7 @@ on:
       - '**/*.md'
       - '_config.yml'
       - '_toc.yml'
-  workflow_dispatch:
+  workflow_dispatch:  # Permite disparar manualmente o workflow
 
 permissions:
   contents: read
@@ -56,10 +56,11 @@ jobs:
           path: _build/html
 
   deploy:
-    runs-on: ubuntu-latest
     needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Deploy to GitHub Pages
