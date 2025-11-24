@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -68,7 +65,6 @@
     <link rel="prev" title="Importando Módulos" href="Aula3_ImportandoModulos.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -84,8 +80,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -93,6 +100,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -100,8 +108,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -117,8 +125,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -148,17 +155,21 @@
     
     
     <img src="../_static/UniRoboticaAzulSemFundo.png" class="logo__image only-light" alt="Python na Engenharia - Home"/>
-    <img src="../_static/UniRoboticaAzulSemFundo.png" class="logo__image only-dark pst-js-only" alt="Python na Engenharia - Home"/>
+    <script>document.write(`<img src="../_static/UniRoboticaAzulSemFundo.png" class="logo__image only-dark" alt="Python na Engenharia - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -171,35 +182,11 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Aula1_ConceitosBasicos.html">Introdução a programação</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="Aula2_ControleFluxo.html">CONTROLE DE FLUXO</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="Aula2_ControleFluxo.html">Controle de Fluxo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula3_ImportandoModulos.html">Importando Módulos</a></li>
-
-
-
-
-
-
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Funções</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula5_CriandoModulos.html">Criando módulos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Aula6_ExemploAplicacao.html">Exemplo de aplicação 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula6_ExemploAplicacao.html">Exemplo de aplicação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula7_ContEscopoExec.html">Contole de escopo de execução</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula8_Listas.html">Listas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula9_Listas2.html">Métodos</a></li>
@@ -211,6 +198,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Pratica1_AtividadeFluxoDecisao.html">Atividade Prática – Programação com Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Pratica2_OrcamentoEquipes.html">Atividade Prática - Simulação de Orçamento de Fundação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Pratica3_ModRedesPetriLugarTransicao.html">Atividade: Modelagem e Simulação de um Processo Construtivo com Redes de Petri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pratica3_ModRedesPetriLugarTransicao2.html">Atividade: Modelagem e Simulação de um Processo Construtivo com Redes de Petri</a></li>
 </ul>
 
     </div>
@@ -413,16 +401,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -480,7 +476,7 @@
 <p>Python fornece diversas funções integradas, mas você também pode escrever suas próprias funções. Uma função é como um miniprograma dentro de um programa.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">():</span> <span class="c1">#def nome_da_função(arg)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">():</span> <span class="c1">#def nome_da_função(arg)</span>
    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Howdy!&#39;</span><span class="p">)</span>
    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Howdy!!!&#39;</span><span class="p">)</span>
    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello there.&#39;</span><span class="p">)</span>
@@ -534,7 +530,7 @@ Hello there.
 <p>Ao chamar a função print() ou len() , você passa valores para eles, chamados argumentos , digitando-os entre parênteses. Você também pode definir suas próprias funções que aceitam argumentos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, &#39;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -625,7 +621,7 @@ A execução do programa entra na função e o nome do parâmetro é automaticam
 <p>Definir uma função é criá-la, assim como uma instrução de atribuição como spam = 42 cria a variável spam.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sayHello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sayHello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hello, &#39;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -672,9 +668,9 @@ Variáveis ​​que possuem argumentos atribuídos a elas são parâmetros.</p>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 
-<span class="k">def</span> <span class="nf">getAnswer</span><span class="p">(</span><span class="n">answerNumber</span><span class="p">):</span> <span class="c1">#define função getAnswer (argumento=asnwerNumber)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">getAnswer</span><span class="p">(</span><span class="n">answerNumber</span><span class="p">):</span> <span class="c1">#define função getAnswer (argumento=asnwerNumber)</span>
     <span class="k">if</span> <span class="n">answerNumber</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
            <span class="k">return</span> <span class="s1">&#39;It is certain&#39;</span> <span class="c1">#return da função para aa condição deste if</span>
     <span class="k">elif</span> <span class="n">answerNumber</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
@@ -822,28 +818,28 @@ World
 <p>Mas então você se lembra de seu irmão David, então conta uma história sobre ele e depois volta a terminar sua história original sobre Alice.</p>
 <p>Sua conversa seguiu uma estrutura semelhante a uma pilha , como na Figura seguinte.</p>
 <p>A conversa é semelhante a uma pilha porque o tópico atual está sempre no topo da pilha.</p>
-<p><img alt="image.png 1" src="../_images/img01.jpg" /></p>
+<p><img alt="image.png 1" src="../_images/img011.jpg" /></p>
 <p>Semelhante ao exemplo, chamar uma função não envia a execução em uma viagem só de ida ao topo de uma função.</p>
 <p>Python lembrará qual linha de código chamou a função para que a execução possa retornar para lá quando encontrar uma instrução de retorno .</p>
 <p>Se essa função original chamasse outras funções, a execução retornaria primeiro a essas chamadas de função, antes de retornar da chamada de função original.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">a</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">a</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a() inicia&#39;</span><span class="p">)</span>
     <span class="n">b</span><span class="p">()</span>
     <span class="n">d</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a() retorna&#39;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">b</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">b</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;b() inicia&#39;</span><span class="p">)</span>
     <span class="n">c</span><span class="p">()</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;b() retorna&#39;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">c</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">c</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c() inicia&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;c() retorna&#39;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">d</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">d</span><span class="p">():</span>
        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;d() inicia&#39;</span><span class="p">)</span>
        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;d() retorna&#39;</span><span class="p">)</span>
 
@@ -852,7 +848,7 @@ World
 </div>
 </div>
 </div>
-<p><img alt="image.png 2" src="../_images/img02.jpg" /></p>
+<p><img alt="image.png 2" src="../_images/img021.jpg" /></p>
 </section>
 <section id="escopo-local-e-global">
 <h2>Escopo Local e Global<a class="headerlink" href="#escopo-local-e-global" title="Link to this heading">#</a></h2>
@@ -865,7 +861,7 @@ World
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funcao</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">funcao</span><span class="p">():</span>
     <span class="n">num1</span> <span class="o">=</span> <span class="mi">31337</span>
     
 <span class="n">funcao</span><span class="p">()</span>
@@ -888,7 +884,7 @@ World
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funcao</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">funcao</span><span class="p">():</span>
     <span class="n">num1</span> <span class="o">=</span> <span class="mi">31337</span>
     <span class="nb">print</span> <span class="p">(</span><span class="n">num1</span><span class="p">)</span>
 
@@ -925,12 +921,12 @@ World
 <p>Um novo escopo local é criado sempre que uma função é chamada, inclusive quando uma função é chamada de outra função. Considere este programa:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funcao_principal</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">funcao_principal</span><span class="p">():</span>
     <span class="n">num1</span> <span class="o">=</span> <span class="mi">99</span>
     <span class="n">funcao_secundaria</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">funcao_secundaria</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">funcao_secundaria</span><span class="p">():</span>
     <span class="n">num1</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">num2</span> <span class="o">=</span> <span class="mi">101</span>
     
@@ -946,12 +942,12 @@ World
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funcao</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">funcao</span><span class="p">():</span>
     <span class="n">num1</span> <span class="o">=</span> <span class="mi">99</span>
     <span class="n">funcao_secundaria</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">funcao_secundaria</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">funcao_secundaria</span><span class="p">():</span>
         <span class="n">num2</span> <span class="o">=</span> <span class="mi">101</span>
         <span class="n">num1</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span>
@@ -972,7 +968,7 @@ World
 <p>No seguinte programa: Como não existe nenhum parâmetro chamado num1 ou qualquer código que atribua um valor ao num1 na função funcao1() , quando num1 é usado em funcao1() , o Python considera isso uma referência à variável global num1 . É por isso que 42 é impresso quando o programa anterior é executado.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funcao1</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">funcao1</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">num1</span><span class="p">)</span>
     
 
@@ -997,11 +993,11 @@ World
 <p>Tecnicamente, é perfeitamente aceitável usar o mesmo nome de variável para uma variável global e variáveis ​​locais em escopos diferentes em Python. Mas, para simplificar a sua vida, evite fazer isso.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funcao</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">funcao</span><span class="p">():</span>
     <span class="n">escopo</span> <span class="o">=</span> <span class="s1">&#39;funcao local&#39;</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">escopo</span><span class="p">)</span>    <span class="c1"># prints &#39;funcao local&#39;</span>
 
-<span class="k">def</span> <span class="nf">funcao_secundaria</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">funcao_secundaria</span><span class="p">():</span>
     <span class="n">escopo</span> <span class="o">=</span> <span class="s1">&#39;funcao_secundaria local&#39;</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">escopo</span><span class="p">)</span>    <span class="c1"># prints &#39;funcao_secundaria local&#39;</span>
     <span class="n">funcao</span><span class="p">()</span>
@@ -1036,7 +1032,7 @@ global
 <p>Se você precisar modificar uma variável global dentro de uma função, use a instrução global . Se você tiver uma linha como variáveis globais no topo de uma função, ela diz ao Python: “Nesta função, nome_da_variável se referem à variável global, então não crie uma variável local com este nome”.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funcao</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">funcao</span><span class="p">():</span>
   <span class="k">global</span> <span class="n">escopo</span>
   <span class="n">escopo</span> <span class="o">=</span> <span class="s1">&#39;funcao&#39;</span>
 
@@ -1061,15 +1057,15 @@ global
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funcao1</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">funcao1</span><span class="p">():</span>
   <span class="k">global</span> <span class="n">escopo</span>
   <span class="n">escopo</span> <span class="o">=</span> <span class="s1">&#39;funcao1&#39;</span> <span class="c1"># this is the global</span>
 
-<span class="k">def</span> <span class="nf">funcao2</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">funcao2</span><span class="p">():</span>
   <span class="n">escopo</span> <span class="o">=</span> <span class="s1">&#39;funcao2&#39;</span> <span class="c1"># this is a local</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">escopo</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">funcao3</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">funcao3</span><span class="p">():</span>
   <span class="nb">print</span><span class="p">(</span><span class="n">escopo</span><span class="p">)</span> <span class="c1"># this is the global</span>
 
 <span class="n">escopo</span> <span class="o">=</span> <span class="mi">42</span> <span class="c1"># this is the global</span>
@@ -1101,7 +1097,7 @@ funcao1
 <p>Se você tentar usar uma variável local em uma função antes de atribuir um valor a ela, como no programa a seguir, o Python apresentará um erro.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">funcao</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">funcao</span><span class="p">():</span>
     <span class="n">var_local</span> <span class="o">=</span> <span class="s1">&#39;funcao local&#39;</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">var_local</span><span class="p">)</span> <span class="c1"># ERROR!</span>
     
@@ -1140,7 +1136,7 @@ funcao1
 <p>Por exemplo, considere o programa a seguir, que apresenta um erro de divisão por zero.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divisao</span><span class="p">(</span><span class="n">divideBy</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">divisao</span><span class="p">(</span><span class="n">divideBy</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">42</span> <span class="o">/</span> <span class="n">divideBy</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">divisao</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
@@ -1164,7 +1160,7 @@ funcao1
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="nb">print</span><span class="p">(</span><span class="n">divisao</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
 
 <span class="nn">Cell In[12], line 2,</span> in <span class="ni">divisao</span><span class="nt">(divideBy)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">divisao</span><span class="p">(</span><span class="n">divideBy</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">divisao</span><span class="p">(</span><span class="n">divideBy</span><span class="p">):</span>
 <span class="ne">----&gt; </span><span class="mi">2</span>     <span class="k">return</span> <span class="mi">42</span> <span class="o">/</span> <span class="n">divideBy</span>
 
 <span class="ne">ZeroDivisionError</span>: division by zero
@@ -1176,7 +1172,7 @@ funcao1
 <p>Você pode colocar o código anterior de divisão por zero em uma cláusula try e fazer com que uma cláusula except contenha código para lidar com o que acontece quando esse erro ocorre.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divisao</span><span class="p">(</span><span class="n">divideBy</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">divisao</span><span class="p">(</span><span class="n">divideBy</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">return</span> <span class="mi">42</span> <span class="o">/</span> <span class="n">divideBy</span>
     <span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
@@ -1202,7 +1198,7 @@ None
 <p><a class="reference external" href="https://autbor.com/tryexceptzerodivide/">https://autbor.com/tryexceptzerodivide/</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divisao</span><span class="p">(</span><span class="n">divideBy</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">divisao</span><span class="p">(</span><span class="n">divideBy</span><span class="p">):</span>
     <span class="k">return</span> <span class="mi">42</span> <span class="o">/</span> <span class="n">divideBy</span>
 
 <span class="k">try</span><span class="p">:</span>
@@ -1227,7 +1223,7 @@ Error: Invalid argument.
 <p>Este programa criará um padrão em zigue-zague para frente e para trás até que o usuário o interrompa pressionando o botão Parar do editor ou pressionando CTRL-C</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span><span class="o">,</span> <span class="nn">sys</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
 <span class="n">indent</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># How many spaces to indent.</span>
 <span class="n">indentIncreasing</span> <span class="o">=</span> <span class="kc">True</span> <span class="c1"># Whether the indentation is increasing or not.</span>
 
@@ -1615,7 +1611,7 @@ Error: Invalid argument.
 <p>Dica: um número inteiro é par se o número % 2 == 0 e é ímpar se o número % 2 == 1 .</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">collatz</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">collatz</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
   <span class="n">lst</span><span class="o">=</span><span class="p">[]</span>
   <span class="n">lst</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
   
@@ -1763,7 +1759,7 @@ Error: Invalid argument.
 <p>Podemos criar uma função que escreve a série de Fibonacci até um limite arbitrário:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>    <span class="c1"># write Fibonacci series up to n</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fib</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>    <span class="c1"># write Fibonacci series up to n</span>
 
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Print a Fibonacci series up to n.&quot;&quot;&quot;</span>
 
@@ -1852,22 +1848,22 @@ Error: Invalid argument.
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fulano</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fulano</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fulano() inicia&#39;</span><span class="p">)</span>
     <span class="n">sincrano</span><span class="p">()</span>
     <span class="n">sincrana</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fulano() retorna&#39;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">sincrano</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">sincrano</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sincrano() inicia&#39;</span><span class="p">)</span>
     <span class="n">fulana</span><span class="p">()</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;sincrano() retorna&#39;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">fulana</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fulana</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fulana() inicia&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fulana() retorna&#39;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">sincrana</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">sincrana</span><span class="p">():</span>
        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sincrana() inicia&#39;</span><span class="p">)</span>
        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sincrana() retorna&#39;</span><span class="p">)</span>
 
@@ -1890,7 +1886,7 @@ fulano() retorna
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">soma_matricula</span><span class="p">(</span><span class="n">matricula</span><span class="p">):</span>  <span class="c1"># Define a função que recebe a matrícula como argumento</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">soma_matricula</span><span class="p">(</span><span class="n">matricula</span><span class="p">):</span>  <span class="c1"># Define a função que recebe a matrícula como argumento</span>
     <span class="n">soma_pares</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Inicializa a soma dos números pares</span>
     <span class="n">soma_impares</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Inicializa a soma dos números ímpares</span>
     
@@ -1926,38 +1922,10 @@ fulano() retorna
 <h2>Funções recursivas<a class="headerlink" href="#funcoes-recursivas" title="Link to this heading">#</a></h2>
 <p>Uma função recursiva é toda aquela que chama a si mesma.</p>
 <p><img alt="Exemplo função recursiva" src="../_images/img12.png" /></p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">contagemRegressiva</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">1</span><span class="p">:</span>
-        <span class="k">return</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
-        <span class="n">contagemRegressiva</span><span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-
-<span class="n">contagemRegressiva</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10
-9
-8
-7
-6
-5
-4
-3
-2
-1
-</pre></div>
-</div>
-</div>
-</div>
 <p>Desta forma, uma função recursiva funciona como um loop e se não houver uma estruturação correta criará um loop infinito.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">contagemRegressiva</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">contagemRegressiva</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
     <span class="n">contagemRegressiva</span><span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 
@@ -4951,29 +4919,29 @@ fulano() retorna
 <span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">contagemRegressiva</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 
 <span class="nn">Cell In[24], line 3,</span> in <span class="ni">contagemRegressiva</span><span class="nt">(num)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">contagemRegressiva</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">contagemRegressiva</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">contagemRegressiva</span><span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="nn">Cell In[24], line 3,</span> in <span class="ni">contagemRegressiva</span><span class="nt">(num)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">contagemRegressiva</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">contagemRegressiva</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">contagemRegressiva</span><span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 
     <span class="p">[</span><span class="o">...</span> <span class="n">skipping</span> <span class="n">similar</span> <span class="n">frames</span><span class="p">:</span> <span class="n">contagemRegressiva</span> <span class="n">at</span> <span class="n">line</span> <span class="mi">3</span> <span class="p">(</span><span class="mi">2972</span> <span class="n">times</span><span class="p">)]</span>
 
 <span class="nn">Cell In[24], line 3,</span> in <span class="ni">contagemRegressiva</span><span class="nt">(num)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">contagemRegressiva</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">contagemRegressiva</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">contagemRegressiva</span><span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="nn">Cell In[24], line 2,</span> in <span class="ni">contagemRegressiva</span><span class="nt">(num)</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span> <span class="nf">contagemRegressiva</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="k">def</span><span class="w"> </span><span class="nf">contagemRegressiva</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
 <span class="ne">----&gt; </span><span class="mi">2</span>     <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">contagemRegressiva</span><span class="p">(</span><span class="n">num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
 
 <span class="nn">File ~\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\ipykernel\iostream.py:664,</span> in <span class="ni">OutStream.write</span><span class="nt">(self, string)</span>
-<span class="g g-Whitespace">    </span><span class="mi">655</span> <span class="k">def</span> <span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>  <span class="c1"># type:ignore[override]</span>
+<span class="g g-Whitespace">    </span><span class="mi">655</span> <span class="k">def</span><span class="w"> </span><span class="nf">write</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">string</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>  <span class="c1"># type:ignore[override]</span>
 <span class="g g-Whitespace">    </span><span class="mi">656</span><span class="w">     </span><span class="sd">&quot;&quot;&quot;Write to current stream after encoding if necessary</span>
 <span class="g g-Whitespace">    </span><span class="mi">657</span><span class="sd"> </span>
 <span class="g g-Whitespace">    </span><span class="mi">658</span><span class="sd">     Returns</span>
@@ -4991,7 +4959,7 @@ fulano() retorna
 <p>A estrutura de uma função recursiva é dividida em <strong>caso base</strong> e <strong>caso recursivo</strong>. O caso recursivo é aquele em que a função chama a si mesma, enquanto o caso base é aquele que encerra a recursão. Vejamos o exemplo a seguir.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">fatorial</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">fatorial</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span> <span class="c1"># Caso base</span>
         <span class="k">return</span> <span class="mi">1</span>
     <span class="k">else</span><span class="p">:</span> <span class="c1"># Caso recursivo</span>
@@ -5021,7 +4989,7 @@ fulano() retorna
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcularCustoConcreto</span><span class="p">(</span><span class="n">altura</span><span class="p">,</span> <span class="n">largura</span><span class="p">,</span> <span class="n">comprimento</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calcularCustoConcreto</span><span class="p">(</span><span class="n">altura</span><span class="p">,</span> <span class="n">largura</span><span class="p">,</span> <span class="n">comprimento</span><span class="p">):</span>
     <span class="n">volumeConcreto</span> <span class="o">=</span> <span class="n">altura</span> <span class="o">*</span> <span class="n">largura</span> <span class="o">*</span> <span class="n">comprimento</span> <span class="c1"># em m³</span>
     <span class="c1"># Como a densidade é a massa sobre o volume (d = m / v), então</span>
     <span class="c1"># podemos considerar que a massa é o volume vezes a densidade (m = v * d)</span>
@@ -5112,8 +5080,7 @@ fulano() retorna
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -5188,8 +5155,8 @@ By UniRobótica
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

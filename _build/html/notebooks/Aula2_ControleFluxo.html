@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>CONTROLE DE FLUXO &#8212; Python na Engenharia</title>
+    <title>Controle de Fluxo &#8212; Python na Engenharia</title>
   
   
   
@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -68,7 +65,6 @@
     <link rel="prev" title="Introdução a programação" href="Aula1_ConceitosBasicos.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -84,8 +80,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -93,6 +100,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -100,8 +108,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -117,8 +125,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -148,17 +155,21 @@
     
     
     <img src="../_static/UniRoboticaAzulSemFundo.png" class="logo__image only-light" alt="Python na Engenharia - Home"/>
-    <img src="../_static/UniRoboticaAzulSemFundo.png" class="logo__image only-dark pst-js-only" alt="Python na Engenharia - Home"/>
+    <script>document.write(`<img src="../_static/UniRoboticaAzulSemFundo.png" class="logo__image only-dark" alt="Python na Engenharia - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -171,35 +182,11 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Aula1_ConceitosBasicos.html">Introdução a programação</a></li>
-
-
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">CONTROLE DE FLUXO</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Controle de Fluxo</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula3_ImportandoModulos.html">Importando Módulos</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula4_Fun%C3%A7%C3%B5es.html">Funções</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula5_CriandoModulos.html">Criando módulos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Aula6_ExemploAplicacao.html">Exemplo de aplicação 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula6_ExemploAplicacao.html">Exemplo de aplicação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula7_ContEscopoExec.html">Contole de escopo de execução</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula8_Listas.html">Listas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula9_Listas2.html">Métodos</a></li>
@@ -211,6 +198,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Pratica1_AtividadeFluxoDecisao.html">Atividade Prática – Programação com Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Pratica2_OrcamentoEquipes.html">Atividade Prática - Simulação de Orçamento de Fundação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Pratica3_ModRedesPetriLugarTransicao.html">Atividade: Modelagem e Simulação de um Processo Construtivo com Redes de Petri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pratica3_ModRedesPetriLugarTransicao2.html">Atividade: Modelagem e Simulação de um Processo Construtivo com Redes de Petri</a></li>
 </ul>
 
     </div>
@@ -413,16 +401,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -436,7 +432,7 @@
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>CONTROLE DE FLUXO</h1>
+    <h1>Controle de Fluxo</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -446,36 +442,30 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">CONTROLE DE FLUXO</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-booleanos">Valores booleanos</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-comparacao">Operadores de comparação</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-booleanos">Operadores booleanos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-booleanos">Valores booleanos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-comparacao">Operadores de comparação</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-booleanos">Operadores booleanos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabela-verdade-do-operador-and">Tabela Verdade do operador <code class="docutils literal notranslate"><span class="pre">and</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabela-verdade-do-operador-or">Tabela Verdade do Operador <code class="docutils literal notranslate"><span class="pre">or</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabela-verdade-do-operador-not">Tabela Verdade do Operador <code class="docutils literal notranslate"><span class="pre">not</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#misturando-operadores-booleanos-e-de-comparacao">Misturando operadores booleanos e de comparação</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#elementos-de-controle-de-fluxo">Elementos de controle de fluxo</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#condicoes">Condições</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#blocos-de-codigo">Blocos de código</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#misturando-operadores-booleanos-e-de-comparacao">Misturando operadores booleanos e de comparação</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elementos-de-controle-de-fluxo">Elementos de controle de fluxo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condicoes">Condições</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blocos-de-codigo">Blocos de código</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declaracoes-de-controle-de-fluxo">Declarações de controle de fluxo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if">if</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#else">else</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elif">elif</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">while Loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-com-if">Exemplo com <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#if">if</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#else">else</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#elif">elif</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">while Loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-com-while">Exemplo com <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-for-e-a-funcao-range">Loop for e a função range()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-while-equivalente">Loop <code class="docutils literal notranslate"><span class="pre">while</span></code> equivalente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#os-argumentos-inicial-final-e-gradual-para-range">Os argumentos inicial, final e gradual para range()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-na-engenharia-civil">Exemplo na Engenharia Civil</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-com-if">Exemplo com <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-com-while">Exemplo com <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-for-e-a-funcao-range">Loop for e a função range()</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-while-equivalente">Loop <code class="docutils literal notranslate"><span class="pre">while</span></code> equivalente</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#os-argumentos-inicial-final-e-gradual-para-range">Os argumentos inicial, final e gradual para range()</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-na-engenharia-civil">Exemplo na Engenharia Civil</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -494,7 +484,7 @@
 <li><p><a class="reference external" href="https://colab.research.google.com/github/UniRobotica/cursos/blob/main/Informatica_Aplicada/Notebooks/Python%20Basico/Aula2_ControleFluxo.ipynb">Link da aula no Colab</a></p></li>
 </ul>
 <section class="tex2jax_ignore mathjax_ignore" id="controle-de-fluxo">
-<h1>CONTROLE DE FLUXO<a class="headerlink" href="#controle-de-fluxo" title="Link to this heading">#</a></h1>
+<h1>Controle de Fluxo<a class="headerlink" href="#controle-de-fluxo" title="Link to this heading">#</a></h1>
 <p>Você conheceu o básico das instruções individuais e sabe que um programa é apenas uma série de instruções.
 Com base na forma como as expressões são avaliadas, um programa pode decidir pular instruções, repeti-las ou escolher uma das várias instruções para executar.
 As instruções de controle de fluxo podem decidir quais instruções Python serão executadas sob quais condições.</p>
@@ -516,11 +506,10 @@ As instruções de controle de fluxo podem decidir quais instruções Python ser
 </div>
 </div>
 </div>
-<p><img alt="image 1!" src="Figuras/aula02/img01.jpg" /></p>
+<p><img alt="image 1!" src="../_images/img01.jpg" /></p>
 <p>Em um fluxograma, geralmente há mais de um caminho a percorrer do início ao fim. O mesmo se aplica às linhas de código de um programa de computador. Os fluxogramas representam esses pontos de ramificação com losangos, enquanto as outras etapas são representadas com retângulos. As etapas inicial e final são representadas por retângulos arredondados.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="valores-booleanos">
-<h1>Valores booleanos<a class="headerlink" href="#valores-booleanos" title="Link to this heading">#</a></h1>
+<section id="valores-booleanos">
+<h2>Valores booleanos<a class="headerlink" href="#valores-booleanos" title="Link to this heading">#</a></h2>
 <p>Embora os tipos de dados inteiro, ponto flutuante e string tenham um número ilimitado de valores possíveis, o tipo de dados Booleano possui apenas dois valores: True e False . (Booleano é maiúsculo porque o tipo de dados leva o nome do matemático George Boole.)</p>
 <p>Quando inserido como código Python, os valores booleanos True e False não possuem as aspas que você coloca em torno das strings e sempre começam com T ou F maiúsculo , com o resto da palavra em letras minúsculas.</p>
 <div class="cell docutils container">
@@ -568,8 +557,8 @@ As instruções de controle de fluxo podem decidir quais instruções Python ser
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="operadores-de-comparacao">
-<h1>Operadores de comparação<a class="headerlink" href="#operadores-de-comparacao" title="Link to this heading">#</a></h1>
+<section id="operadores-de-comparacao">
+<h2>Operadores de comparação<a class="headerlink" href="#operadores-de-comparacao" title="Link to this heading">#</a></h2>
 <p>Operadores de comparação , também chamados de operadores relacionais , comparam dois valores e avaliam até um único valor booleano.</p>
 <div class="pst-scrollable-table-container"><table class="table">
 <thead>
@@ -714,9 +703,10 @@ Você deve ter notado que o operador == (igual a) possui dois sinais de igual, e
 O operador = (atribuição) coloca o valor à direita na variável à esquerda.</p>
 </div></blockquote>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="operadores-booleanos">
-<h1>Operadores booleanos<a class="headerlink" href="#operadores-booleanos" title="Link to this heading">#</a></h1>
+<section id="operadores-booleanos">
+<h2>Operadores booleanos<a class="headerlink" href="#operadores-booleanos" title="Link to this heading">#</a></h2>
 <p>Os três operadores booleanos ( <code class="docutils literal notranslate"><span class="pre">and</span></code> , <code class="docutils literal notranslate"><span class="pre">or</span></code> , e <code class="docutils literal notranslate"><span class="pre">not</span></code> ) são usados ​​para comparar valores booleanos. Assim como os operadores de comparação, eles avaliam essas expressões até um valor booleano.</p>
+</section>
 <section id="tabela-verdade-do-operador-and">
 <h2>Tabela Verdade do operador <code class="docutils literal notranslate"><span class="pre">and</span></code><a class="headerlink" href="#tabela-verdade-do-operador-and" title="Link to this heading">#</a></h2>
 <div class="pst-scrollable-table-container"><table class="table">
@@ -786,9 +776,8 @@ O operador = (atribuição) coloca o valor à direita na variável à esquerda.<
 </table>
 </div>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="misturando-operadores-booleanos-e-de-comparacao">
-<h1>Misturando operadores booleanos e de comparação<a class="headerlink" href="#misturando-operadores-booleanos-e-de-comparacao" title="Link to this heading">#</a></h1>
+<section id="misturando-operadores-booleanos-e-de-comparacao">
+<h2>Misturando operadores booleanos e de comparação<a class="headerlink" href="#misturando-operadores-booleanos-e-de-comparacao" title="Link to this heading">#</a></h2>
 <p>Como os operadores de comparação são avaliados como valores booleanos, você pode usá-los em expressões com os operadores booleanos.</p>
 <p>Lembre-se de que os operadores and , or e not são chamados de operadores booleanos porque sempre operam nos valores booleanos True e False . Embora expressões como 4 &lt;5 não sejam valores booleanos, elas são expressões avaliadas até valores booleanos.</p>
 <div class="cell docutils container">
@@ -798,7 +787,7 @@ O operador = (atribuição) coloca o valor à direita na variável à esquerda.<
 </div>
 </div>
 </div>
-<p><img alt="image 2" src="Figuras/aula02/img02.jpg" /></p>
+<p><img alt="image 2" src="../_images/img02.jpg" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">4</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">9</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">)</span>
@@ -821,16 +810,16 @@ O operador = (atribuição) coloca o valor à direita na variável à esquerda.<
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="elementos-de-controle-de-fluxo">
-<h1>Elementos de controle de fluxo<a class="headerlink" href="#elementos-de-controle-de-fluxo" title="Link to this heading">#</a></h1>
+<section id="elementos-de-controle-de-fluxo">
+<h2>Elementos de controle de fluxo<a class="headerlink" href="#elementos-de-controle-de-fluxo" title="Link to this heading">#</a></h2>
 <p>As instruções de controle de fluxo geralmente começam com uma parte chamada condição e são sempre seguidas por um bloco de código chamado cláusula .</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="condicoes">
-<h1>Condições<a class="headerlink" href="#condicoes" title="Link to this heading">#</a></h1>
+<section id="condicoes">
+<h2>Condições<a class="headerlink" href="#condicoes" title="Link to this heading">#</a></h2>
 <p>Condição é apenas um nome mais específico no contexto das instruções de controle de fluxo. As condições sempre são avaliadas como um valor booleano, True ou False . Uma instrução de controle de fluxo decide o que fazer com base no fato de sua condição ser True ou False , e quase todas as instruções de controle de fluxo usam uma condição</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="blocos-de-codigo">
-<h1>Blocos de código<a class="headerlink" href="#blocos-de-codigo" title="Link to this heading">#</a></h1>
+<section id="blocos-de-codigo">
+<h2>Blocos de código<a class="headerlink" href="#blocos-de-codigo" title="Link to this heading">#</a></h2>
 <p>Linhas de código Python podem ser agrupadas em blocos . Você pode saber quando um bloco começa e termina pelo recuo das linhas de código.</p>
 <ul class="simple">
 <li><p>Os blocos começam quando o recuo aumenta.</p></li>
@@ -854,12 +843,12 @@ O operador = (atribuição) coloca o valor à direita na variável à esquerda.<
 </div>
 </div>
 <p>Você pode ver a execução deste programa em <a class="reference external" href="https://autbor.com/blocks/">https://autbor.com/blocks/</a> .</p>
+</section>
 <section id="declaracoes-de-controle-de-fluxo">
 <h2>Declarações de controle de fluxo<a class="headerlink" href="#declaracoes-de-controle-de-fluxo" title="Link to this heading">#</a></h2>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="if">
-<h1>if<a class="headerlink" href="#if" title="Link to this heading">#</a></h1>
+<section id="if">
+<h2>if<a class="headerlink" href="#if" title="Link to this heading">#</a></h2>
 <p>O tipo mais comum de instrução de controle de fluxo é a instrução if . A cláusula de uma instrução if (ou seja, o bloco após a instrução if ) será executada se a condição da instrução for True . A cláusula será ignorada se a condição for False .</p>
 <p>Em linguagem simples, uma instrução if poderia ser lida como:</p>
 <p>“Se esta condição for verdadeira, execute o código na cláusula”.</p>
@@ -885,7 +874,7 @@ O operador = (atribuição) coloca o valor à direita na variável à esquerda.<
 </div>
 </div>
 </div>
-<p><img alt="image 3" src="Figuras/aula02/img03.jpg" /></p>
+<p><img alt="image 3" src="../_images/img03.jpg" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;Alice&#39;</span>
@@ -896,8 +885,8 @@ O operador = (atribuição) coloca o valor à direita na variável à esquerda.<
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="else">
-<h1>else<a class="headerlink" href="#else" title="Link to this heading">#</a></h1>
+<section id="else">
+<h2>else<a class="headerlink" href="#else" title="Link to this heading">#</a></h2>
 <p>Uma cláusula if pode opcionalmente ser seguida por uma instrução else . A cláusula else é executada somente quando a condição da instrução if é False .
 Em linguagem simples, uma instrução else poderia ser lida como:
 “Se esta condição for verdadeira, execute este código. Ou então, execute esse código.”
@@ -907,7 +896,7 @@ Uma instrução else não tem uma condição e, no código, uma instrução else
 <li><p>Dois pontos</p></li>
 <li><p>Começando na próxima linha, um bloco de código recuado (chamado de cláusula else )</p></li>
 </ul>
-<p><img alt="image 4" src="Figuras/aula02/img04.jpg" /></p>
+<p><img alt="image 4" src="../_images/img04.jpg" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;John&#39;</span>
@@ -926,8 +915,8 @@ Uma instrução else não tem uma condição e, no código, uma instrução else
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="elif">
-<h1>elif<a class="headerlink" href="#elif" title="Link to this heading">#</a></h1>
+<section id="elif">
+<h2>elif<a class="headerlink" href="#elif" title="Link to this heading">#</a></h2>
 <p>Embora apenas uma das cláusulas if ou else seja executada, você pode ter um caso em que deseja que uma das muitas cláusulas possíveis seja executada.
 A instrução elif é uma instrução “else if” que sempre segue um if ou outra instrução elif . Ele fornece outra condição que será verificada somente se todas as condições anteriores forem False . No código, uma instrução elif sempre consiste no seguinte:</p>
 <ul class="simple">
@@ -936,7 +925,7 @@ A instrução elif é uma instrução “else if” que sempre segue um if ou ou
 <li><p>Dois pontos</p></li>
 <li><p>Começando na próxima linha, um bloco de código recuado (chamado de cláusula elif )</p></li>
 </ul>
-<p><img alt="image 5" src="Figuras/aula02/img05.jpg" /></p>
+<p><img alt="image 5" src="../_images/img05.jpg" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;John&#39;</span>
@@ -987,6 +976,7 @@ A instrução elif é uma instrução “else if” que sempre segue um if ou ou
 </div>
 </div>
 </div>
+</section>
 <section id="while-loop">
 <h2>while Loop<a class="headerlink" href="#while-loop" title="Link to this heading">#</a></h2>
 <p>Você pode fazer um bloco de código ser executado repetidamente usando uma instrução while . O código em uma cláusula while será executado enquanto a condição da instrução while for True . No código, uma instrução while sempre consiste no seguinte:</p>
@@ -997,11 +987,9 @@ A instrução elif é uma instrução “else if” que sempre segue um if ou ou
 <li><p>Começando na próxima linha, um bloco de código recuado (chamado de cláusula while )</p></li>
 </ul>
 <p>uma instrução while é semelhante a uma instrução if . A diferença está em como eles se comportam</p>
-</section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exemplo-com-if">
-<h1>Exemplo com <code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#exemplo-com-if" title="Link to this heading">#</a></h1>
-<p><img alt="image 6" src="Figuras/aula02/img06.jpg" /></p>
+<section id="exemplo-com-if">
+<h3>Exemplo com <code class="docutils literal notranslate"><span class="pre">if</span></code><a class="headerlink" href="#exemplo-com-if" title="Link to this heading">#</a></h3>
+<p><img alt="image 6" src="../_images/img06.jpg" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span> <span class="o">=</span> <span class="mi">4</span>
@@ -1020,9 +1008,10 @@ A instrução elif é uma instrução “else if” que sempre segue um if ou ou
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="exemplo-com-while">
-<h1>Exemplo com <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#exemplo-com-while" title="Link to this heading">#</a></h1>
-<p><img alt="image 7" src="Figuras/aula02/img07.jpg" /></p>
+</section>
+<section id="exemplo-com-while">
+<h2>Exemplo com <code class="docutils literal notranslate"><span class="pre">while</span></code><a class="headerlink" href="#exemplo-com-while" title="Link to this heading">#</a></h2>
+<p><img alt="image 7" src="../_images/img07.jpg" /></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">spam</span> <span class="o">=</span> <span class="mi">5</span>
@@ -1049,7 +1038,7 @@ A instrução elif é uma instrução “else if” que sempre segue um if ou ou
 <div><p>[Um loop while irritante]
 Aqui está um pequeno exemplo de programa que irá pedir para você digitar, literalmente, seu nome .</p>
 </div></blockquote>
-<p><img alt="image 8" src="Figuras/aula02/img08.jpg" /></p>
+<p><img alt="image 8" src="../_images/img08.jpg" /></p>
 <p>Existe um atalho para fazer com que a execução do programa saia antecipadamente de uma cláusula do loop while . Se a execução atingir uma instrução break , ela sai imediatamente da cláusula do loop while . No código, uma instrução break contém simplesmente a palavra-chave break .</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1063,7 +1052,7 @@ Aqui está um pequeno exemplo de programa que irá pedir para você digitar, lit
 </div>
 </div>
 </div>
-<p><img alt="image 9" src="Figuras/aula02/img09.jpg" /></p>
+<p><img alt="image 9" src="../_images/img09.jpg" /></p>
 <blockquote>
 <div><p>Se você alguma vez executar um programa que tenha um bug que o faça travar em um loop infinito, pressione CTRL -C</p>
 </div></blockquote>
@@ -1084,10 +1073,10 @@ Aqui está um pequeno exemplo de programa que irá pedir para você digitar, lit
 </div>
 </div>
 <p>Se o usuário inserir qualquer nome além de Joe, a instrução continue faz com que a execução do programa volte ao início do loop. Quando o programa reavaliar a condição, a execução sempre entrará no loop, pois a condição é simplesmente o valor True . Depois que o usuário passa dessa instrução if , é solicitada uma senha. Se a senha inserida for correta, a instrução break será executada e a execução sairá do loop while para imprimir Acesso concedido. Caso contrário, a execução continua até o final do loop while , onde retorna ao início do loop.</p>
-<p><img alt="image 10" src="Figuras/aula02/img10.jpg" /></p>
+<p><img alt="image 10" src="../_images/img10.jpg" /></p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="loop-for-e-a-funcao-range">
-<h1>Loop for e a função range()<a class="headerlink" href="#loop-for-e-a-funcao-range" title="Link to this heading">#</a></h1>
+<section id="loop-for-e-a-funcao-range">
+<h2>Loop for e a função range()<a class="headerlink" href="#loop-for-e-a-funcao-range" title="Link to this heading">#</a></h2>
 <p>O loop while continua em loop enquanto sua condição for True (que é a razão de seu nome), mas e se você quiser executar um bloco de código apenas um determinado número de vezes? Você pode fazer isso com uma instrução de loop for e a função range() .</p>
 <p>No código, uma instrução for se parece com <em>for i in range(5):</em> e inclui o seguinte:</p>
 <ul class="simple">
@@ -1107,7 +1096,7 @@ Aqui está um pequeno exemplo de programa que irá pedir para você digitar, lit
 </div>
 </div>
 </div>
-<p><img alt="image 11" src="Figuras/aula02/img11.jpg" /></p>
+<p><img alt="image 11" src="../_images/img11.jpg" /></p>
 <p><a class="reference external" href="https://autbor.com/fivetimesfor/">https://autbor.com/fivetimesfor/</a></p>
 <blockquote>
 <div><p>Você também pode usar instruções break e continue dentro de loops for . A instrução continue continuará até o próximo valor do contador do loop for , como se a execução do programa tivesse atingido o final do loop e retornado ao início. Na verdade, você pode usar instruções continue e break apenas dentro de loops while e for . Se você tentar usar essas instruções em outro lugar, o Python apresentará um erro.</p>
@@ -1125,8 +1114,8 @@ Aqui está um pequeno exemplo de programa que irá pedir para você digitar, lit
 </div>
 <p>O jovem Gauss descobriu uma maneira de resolver o problema em segundos. Existem 50 pares de números que somam 101: 1 + 100, 2 + 99, 3 + 98 e assim por diante, até 50 + 51. Desde 50 × 101 é 5.050, a soma de todos os números de 0 a 100 é 5.050.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="loop-while-equivalente">
-<h1>Loop <code class="docutils literal notranslate"><span class="pre">while</span></code> equivalente<a class="headerlink" href="#loop-while-equivalente" title="Link to this heading">#</a></h1>
+<section id="loop-while-equivalente">
+<h2>Loop <code class="docutils literal notranslate"><span class="pre">while</span></code> equivalente<a class="headerlink" href="#loop-while-equivalente" title="Link to this heading">#</a></h2>
 <p>você pode usar um loop while para fazer a mesma coisa que um loop for ;</p>
 <p>loops for são apenas mais concisos</p>
 <div class="cell docutils container">
@@ -1141,8 +1130,8 @@ Aqui está um pequeno exemplo de programa que irá pedir para você digitar, lit
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="os-argumentos-inicial-final-e-gradual-para-range">
-<h1>Os argumentos inicial, final e gradual para range()<a class="headerlink" href="#os-argumentos-inicial-final-e-gradual-para-range" title="Link to this heading">#</a></h1>
+<section id="os-argumentos-inicial-final-e-gradual-para-range">
+<h2>Os argumentos inicial, final e gradual para range()<a class="headerlink" href="#os-argumentos-inicial-final-e-gradual-para-range" title="Link to this heading">#</a></h2>
 <p>Algumas funções podem ser chamadas com vários argumentos separados por vírgula, e range() é um deles. Isso permite alterar o número inteiro passado para range() para seguir qualquer sequência de números inteiros, inclusive começando em um número diferente de zero.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1215,8 +1204,8 @@ A média foi 7.17
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="exemplo-na-engenharia-civil">
-<h1>Exemplo na Engenharia Civil<a class="headerlink" href="#exemplo-na-engenharia-civil" title="Link to this heading">#</a></h1>
+<section id="exemplo-na-engenharia-civil">
+<h2>Exemplo na Engenharia Civil<a class="headerlink" href="#exemplo-na-engenharia-civil" title="Link to this heading">#</a></h2>
 <p>Como exemplo do que discutimos, vamos imaginar que temos um estoque de materiais que será utilizado em uma obra, e precisamos verificar se a quantidade disponível é suficiente. Para isso, devemos iterar sobre o dicionário que contém as quantidades dos materiais e verificar se estão corretas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1242,6 +1231,7 @@ A média foi 7.17
 <ul class="simple">
 <li><p><a class="reference internal" href="Aula1_ConceitosBasicos.html"><span class="std std-doc">Aula Anterior</span></a> | <a class="reference internal" href="Aula3_ImportandoModulos.html"><span class="std std-doc">Próxima Aula</span></a></p></li>
 </ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -1299,8 +1289,7 @@ A média foi 7.17
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -1309,36 +1298,30 @@ A média foi 7.17
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">CONTROLE DE FLUXO</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-booleanos">Valores booleanos</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-comparacao">Operadores de comparação</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-booleanos">Operadores booleanos</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#valores-booleanos">Valores booleanos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-de-comparacao">Operadores de comparação</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operadores-booleanos">Operadores booleanos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabela-verdade-do-operador-and">Tabela Verdade do operador <code class="docutils literal notranslate"><span class="pre">and</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabela-verdade-do-operador-or">Tabela Verdade do Operador <code class="docutils literal notranslate"><span class="pre">or</span></code></a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tabela-verdade-do-operador-not">Tabela Verdade do Operador <code class="docutils literal notranslate"><span class="pre">not</span></code></a></li>
-</ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#misturando-operadores-booleanos-e-de-comparacao">Misturando operadores booleanos e de comparação</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#elementos-de-controle-de-fluxo">Elementos de controle de fluxo</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#condicoes">Condições</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#blocos-de-codigo">Blocos de código</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#misturando-operadores-booleanos-e-de-comparacao">Misturando operadores booleanos e de comparação</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elementos-de-controle-de-fluxo">Elementos de controle de fluxo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#condicoes">Condições</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#blocos-de-codigo">Blocos de código</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#declaracoes-de-controle-de-fluxo">Declarações de controle de fluxo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#if">if</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#else">else</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#elif">elif</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">while Loop</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-com-if">Exemplo com <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#if">if</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#else">else</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#elif">elif</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop">while Loop</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-com-while">Exemplo com <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-for-e-a-funcao-range">Loop for e a função range()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-while-equivalente">Loop <code class="docutils literal notranslate"><span class="pre">while</span></code> equivalente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#os-argumentos-inicial-final-e-gradual-para-range">Os argumentos inicial, final e gradual para range()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-na-engenharia-civil">Exemplo na Engenharia Civil</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-com-if">Exemplo com <code class="docutils literal notranslate"><span class="pre">if</span></code></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-com-while">Exemplo com <code class="docutils literal notranslate"><span class="pre">while</span></code></a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-for-e-a-funcao-range">Loop for e a função range()</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#loop-while-equivalente">Loop <code class="docutils literal notranslate"><span class="pre">while</span></code> equivalente</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#os-argumentos-inicial-final-e-gradual-para-range">Os argumentos inicial, final e gradual para range()</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-na-engenharia-civil">Exemplo na Engenharia Civil</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
@@ -1386,8 +1369,8 @@ By UniRobótica
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

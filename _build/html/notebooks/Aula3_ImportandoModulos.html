@@ -16,33 +16,30 @@
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
     document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
-  <!-- 
-    this give us a css class that will be invisible only if js is disabled 
-  -->
-  <noscript>
-    <style>
-      .pst-js-only { display: none !important; }
-
-    </style>
-  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=26a4bc78f4c0ddb94549" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <!-- So that users can add custom icons -->
-  <script src="../_static/scripts/fontawesome.js?digest=26a4bc78f4c0ddb94549"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
     <script src="../_static/doctools.js?v=9a2dae69"></script>
@@ -65,10 +62,9 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Funções" href="Aula4_Fun%C3%A7%C3%B5es.html" />
-    <link rel="prev" title="CONTROLE DE FLUXO" href="Aula2_ControleFluxo.html" />
+    <link rel="prev" title="Controle de Fluxo" href="Aula2_ControleFluxo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -84,8 +80,19 @@
     <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
-  <dialog id="pst-search-dialog">
-    
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -93,6 +100,7 @@
   <input type="search"
          class="form-control"
          name="q"
+         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -100,8 +108,8 @@
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form>
-  </dialog>
+</form></div>
+  </div>
 
   <div class="pst-async-banner-revealer d-none">
   <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
@@ -117,8 +125,7 @@
       
       
       
-      <dialog id="pst-primary-sidebar-modal"></dialog>
-      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+      <div class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -148,17 +155,21 @@
     
     
     <img src="../_static/UniRoboticaAzulSemFundo.png" class="logo__image only-light" alt="Python na Engenharia - Home"/>
-    <img src="../_static/UniRoboticaAzulSemFundo.png" class="logo__image only-dark pst-js-only" alt="Python na Engenharia - Home"/>
+    <script>document.write(`<img src="../_static/UniRoboticaAzulSemFundo.png" class="logo__image only-dark" alt="Python na Engenharia - Home"/>`);</script>
   
   
 </a></div>
         <div class="sidebar-primary-item">
 
-<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
- <i class="fa-solid fa-magnifying-glass"></i>
- <span class="search-button__default-text">Search</span>
- <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-</button></div>
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
@@ -171,35 +182,11 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="Aula1_ConceitosBasicos.html">Introdução a programação</a></li>
-
-
-<li class="toctree-l1"><a class="reference internal" href="Aula2_ControleFluxo.html">CONTROLE DE FLUXO</a></li>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<li class="toctree-l1"><a class="reference internal" href="Aula2_ControleFluxo.html">Controle de Fluxo</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Importando Módulos</a></li>
-
-
-
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="Aula4_Fun%C3%A7%C3%B5es.html">Funções</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula5_CriandoModulos.html">Criando módulos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Aula6_ExemploAplicacao.html">Exemplo de aplicação 1</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Aula6_ExemploAplicacao.html">Exemplo de aplicação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula7_ContEscopoExec.html">Contole de escopo de execução</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula8_Listas.html">Listas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Aula9_Listas2.html">Métodos</a></li>
@@ -211,6 +198,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Pratica1_AtividadeFluxoDecisao.html">Atividade Prática – Programação com Python</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Pratica2_OrcamentoEquipes.html">Atividade Prática - Simulação de Orçamento de Fundação</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Pratica3_ModRedesPetriLugarTransicao.html">Atividade: Modelagem e Simulação de um Processo Construtivo com Redes de Petri</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pratica3_ModRedesPetriLugarTransicao2.html">Atividade: Modelagem e Simulação de um Processo Construtivo com Redes de Petri</a></li>
 </ul>
 
     </div>
@@ -413,16 +401,24 @@
 
 
 
-<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
-  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
-  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
-  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
-</button>
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
 
 
-<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-</button>
+  </button>
+`);
+</script>
 <button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
 </button>
@@ -446,21 +442,17 @@
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Importando Módulos</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#encerrando-um-programa-antecipadamente-com-a-funcao-sys-exit">Encerrando um programa antecipadamente com a função sys.exit()</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#um-programa-curto-adivinhe-o-numero">Um programa curto: Adivinhe o número</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#renomeando-modulos">Renomeando módulos</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao-das-bibliotecas-de-python">Classificação das bibliotecas de Python</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#importacao-de-bibliotecas-externas">Importação de bibliotecas externas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encerrando-um-programa-antecipadamente-com-a-funcao-sys-exit">Encerrando um programa antecipadamente com a função sys.exit()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#um-programa-curto-adivinhe-o-numero">Um programa curto: Adivinhe o número</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#renomeando-modulos">Renomeando módulos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao-das-bibliotecas-de-python">Classificação das bibliotecas de Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importacao-de-bibliotecas-externas">Importação de bibliotecas externas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">Numpy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">Pandas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">Matplotlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotecas-muito-utilizadas">Bibliotecas Muito Utilizadas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-pratico-de-uso-na-engenharia-civil">Exemplo Prático de Uso na Engenharia Civil</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-pratico-de-uso-na-engenharia-civil">Exemplo Prático de Uso na Engenharia Civil</a></li>
-</ul>
-
             </nav>
         </div>
     </div>
@@ -491,7 +483,7 @@
 <p>Depois de importar um módulo, você pode usar todas as funções interessantes desse módulo. Vamos tentar com o módulo random , que nos dará acesso à função random.randint() .</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">5</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
 </pre></div>
@@ -501,13 +493,12 @@
 <blockquote>
 <div><p>Ao salvar seus scripts Python, tome cuidado para não dar a eles um nome que seja usado por um dos módulos do Python, como <a class="reference external" href="http://random.py">random.py</a> , <a class="reference external" href="http://sys.py">sys.py</a> , <a class="reference external" href="http://os.py">os.py</a> ou <a class="reference external" href="http://math.py">math.py</a> . Se você acidentalmente nomear um de seus programas, digamos, <a class="reference external" href="http://random.py">random.py</a> , e usar uma instrução import random em outro programa, seu programa importaria seu arquivo <a class="reference external" href="http://random.py">random.py</a> em vez do módulo aleatório do Python . Isso pode levar a erros como AttributeError: module ‘random’ has no attribute ‘randint’ , já que seu <a class="reference external" href="http://random.py">random.py</a> não possui as funções que o módulo aleatório real possui. Também não use os nomes de nenhuma função interna do Python, como print() ou input() .</p>
 </div></blockquote>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="encerrando-um-programa-antecipadamente-com-a-funcao-sys-exit">
-<h1>Encerrando um programa antecipadamente com a função sys.exit()<a class="headerlink" href="#encerrando-um-programa-antecipadamente-com-a-funcao-sys-exit" title="Link to this heading">#</a></h1>
+<section id="encerrando-um-programa-antecipadamente-com-a-funcao-sys-exit">
+<h2>Encerrando um programa antecipadamente com a função sys.exit()<a class="headerlink" href="#encerrando-um-programa-antecipadamente-com-a-funcao-sys-exit" title="Link to this heading">#</a></h2>
 <p>Os programas sempre terminam se a execução do programa atingir o final das instruções. No entanto, você pode fazer com que o programa seja encerrado ou encerrado antes da última instrução chamando a função sys.exit() . Como esta função está no módulo sys , você deve importar sys antes que seu programa possa usá-la.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
 
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Digite sair para sair.&#39;</span><span class="p">)</span>
@@ -527,12 +518,12 @@
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="um-programa-curto-adivinhe-o-numero">
-<h1>Um programa curto: Adivinhe o número<a class="headerlink" href="#um-programa-curto-adivinhe-o-numero" title="Link to this heading">#</a></h1>
+<section id="um-programa-curto-adivinhe-o-numero">
+<h2>Um programa curto: Adivinhe o número<a class="headerlink" href="#um-programa-curto-adivinhe-o-numero" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Este é um jogo de adivinhação de um número</span>
-<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="n">numeroSecreto</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span> <span class="c1"># Gera um número secreto entre 1 e 20</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Eu estou pensando em um número entre 1 e 20.&#39;</span><span class="p">)</span>
 
@@ -559,7 +550,7 @@
 <p><a class="reference external" href="https://autbor.com/guessthenumber/">https://autbor.com/guessthenumber/</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="c1">#importa a biblioteca</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span> <span class="c1">#importa a biblioteca</span>
 <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite o número que quer calcular a raiz quadrada: &quot;</span><span class="p">))</span>
 <span class="n">raiz</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="c1"># A função sqrt() do módulo &#39;math&#39; calcula a raiz quadrada </span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A raiz quadrada de </span><span class="si">{num}</span><span class="s2"> é </span><span class="si">{raiz:.3g}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">num</span><span class="o">=</span><span class="n">num</span><span class="p">,</span><span class="n">raiz</span><span class="o">=</span><span class="n">raiz</span><span class="p">))</span>
@@ -582,7 +573,7 @@
 <p>from [módulo] import [função1], [função2], [constante1], [etc]</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span>
 <span class="n">pi</span>
 </pre></div>
 </div>
@@ -591,7 +582,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Utilizando from import</span>
-<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">factorial</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">factorial</span>
 <span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um valor: &quot;</span><span class="p">))</span>
 <span class="n">fat</span> <span class="o">=</span> <span class="n">factorial</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O fatorial de </span><span class="si">{}</span><span class="s2"> é </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">numero</span><span class="p">,</span> <span class="n">fat</span><span class="p">))</span>
@@ -600,12 +591,12 @@
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="renomeando-modulos">
-<h1>Renomeando módulos<a class="headerlink" href="#renomeando-modulos" title="Link to this heading">#</a></h1>
+<section id="renomeando-modulos">
+<h2>Renomeando módulos<a class="headerlink" href="#renomeando-modulos" title="Link to this heading">#</a></h2>
 <p>Uma outra forma de importar módulos é renomeando-o. Observe novamente o exemplo do fatorial:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">m</span>
 <span class="n">numero</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Digite um valor: &quot;</span><span class="p">))</span>
 <span class="n">fat</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">numero</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;O fatorial de </span><span class="si">{}</span><span class="s2"> é </span><span class="si">{}</span><span class="s2">.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">numero</span><span class="p">,</span> <span class="n">fat</span><span class="p">))</span>
@@ -614,8 +605,8 @@
 </div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="classificacao-das-bibliotecas-de-python">
-<h1>Classificação das bibliotecas de Python<a class="headerlink" href="#classificacao-das-bibliotecas-de-python" title="Link to this heading">#</a></h1>
+<section id="classificacao-das-bibliotecas-de-python">
+<h2>Classificação das bibliotecas de Python<a class="headerlink" href="#classificacao-das-bibliotecas-de-python" title="Link to this heading">#</a></h2>
 <p>Essas bibliotecas podem ser classificadas em pelo menos 06 tipos diferentes, sendo eles: Processamento de dados, Visualização de dados, Aprendizado de máquina, Web Scraping (extração de informações da web), Geração de números aleatórios e Processamento de linguagem.</p>
 <p>Bibliotecas de processamento de dados: Pandas, Numpy, etc. Essas bibliotecas são usadas para manipular e processar dados em formato tabular ou matricial.</p>
 <p>Bibliotecas de visualização de dados: Matplotlib, Seaborn, etc. Essas bibliotecas são usadas para criar gráficos e visualizações de dados para ajudar na análise e interpretação dos dados.</p>
@@ -625,9 +616,10 @@
 <p>Bibliotecas de processamento de linguagem natural: NLTK, SpaCy, PyDictionary, etc. Essas bibliotecas são usadas para processar texto e realizar tarefas de processamento de linguagem natural, como análise de sentimentos e extração de informações.</p>
 <p>Outras bibliotecas mais específicas: Flask, PYGame, PyAutoGui, PyOD, Pyglet, etc. Cada uma dessas bibliotecas são usadas para uma finalidade específica, tais quais criar APIS, desenvolver jogos, realizar tarefas de automação, detectar valores e criar aplicativos interativos.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="importacao-de-bibliotecas-externas">
-<h1>Importação de bibliotecas externas<a class="headerlink" href="#importacao-de-bibliotecas-externas" title="Link to this heading">#</a></h1>
+<section id="importacao-de-bibliotecas-externas">
+<h2>Importação de bibliotecas externas<a class="headerlink" href="#importacao-de-bibliotecas-externas" title="Link to this heading">#</a></h2>
 <p>Além dos módulos que fazem parte da biblioteca padrão do Python, existem diversas bibliotecas externas que podem ser instaladas e importadas para adicionar funcionalidades extras ao seu código.</p>
+</section>
 <section id="numpy">
 <h2>Numpy<a class="headerlink" href="#numpy" title="Link to this heading">#</a></h2>
 <p>Com o <strong>numpy</strong> você consegue trabalhar com arrays multidimensionais, ou seja, matrizes. Desta forma, é possivel realizar operações matriciais como multiplicação ou soma de matrizes.
@@ -638,7 +630,7 @@
 <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">matriz1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
 <span class="n">matriz2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
@@ -674,7 +666,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>  
 
 <span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">])</span> 
 <span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">18</span><span class="p">])</span>
@@ -694,7 +686,7 @@ Raiz quadrada do array2  :  [2.44948974 3.16227766 4.24264069]
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">m</span> 
 
 <span class="n">arr1</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">sqrt</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">])</span> 
 <span class="n">arr2</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">sqrt</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">18</span><span class="p">])</span>
@@ -709,7 +701,7 @@ Raiz quadrada do array2  :  [2.44948974 3.16227766 4.24264069]
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span> 
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">m</span> 
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">arr1</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">sqrt</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">])</span> 
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">arr2</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">sqrt</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">18</span><span class="p">])</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Raiz quadrada do array1  : &quot;</span><span class="p">,</span> <span class="n">arr1</span><span class="p">)</span> 
@@ -757,7 +749,7 @@ Raiz quadrada do array2  :  [2.44948974 3.16227766 4.24264069]
 <p>Com a biblioteca pandas é possivel criar tabelas e manipular os dados contidos.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
 
 <span class="n">tabela</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
     <span class="s2">&quot;Nome&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="c1"># Coluna 1</span>
@@ -796,8 +788,8 @@ Raiz quadrada do array2  :  [2.44948974 3.16227766 4.24264069]
 <p>No exemplo a seguir podemos visualizar dados através de gráficos utilizando a biblioteca <strong>matplotlib</strong></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>   <span class="c1"># Cria um figura contendo um único eixo</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">25</span><span class="p">])</span>  <span class="c1"># Plota alguns dados nos eixos</span>
@@ -824,9 +816,8 @@ Raiz quadrada do array2  :  [2.44948974 3.16227766 4.24264069]
 <p>Um módulo é um arquivo contendo definições e instruções Python que podem ser importadas e utilizadas em outros programas.</p>
 <p>Uma biblioteca em Python é um conjunto de módulos e funções pré-definidos que podem ser utilizados para facilitar o desenvolvimento de programas. Em outras palavras, é um conjunto de código que já foi escrito e pode ser reutilizado em diferentes projetos.</p>
 </section>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="exemplo-pratico-de-uso-na-engenharia-civil">
-<h1>Exemplo Prático de Uso na Engenharia Civil<a class="headerlink" href="#exemplo-pratico-de-uso-na-engenharia-civil" title="Link to this heading">#</a></h1>
+<section id="exemplo-pratico-de-uso-na-engenharia-civil">
+<h2>Exemplo Prático de Uso na Engenharia Civil<a class="headerlink" href="#exemplo-pratico-de-uso-na-engenharia-civil" title="Link to this heading">#</a></h2>
 <p>Podemos utilizar o PyCBA para fazer análises em uma dimensão de vigas. O seguinte exemplo foi retirado da documentação oficial do <a class="reference external" href="https://ccaprani.github.io/pycba/notebooks/intro.html">PyCBA</a>.</p>
 <p>Vamos analisar uma viga de dois vãos, com as cargas distribuidas uniformente (UDL) em cada vão.</p>
 <img src="..\Figuras\aula03\exemplo_viga.png" width="700">
@@ -836,9 +827,9 @@ Raiz quadrada do array2  :  [2.44948974 3.16227766 4.24264069]
 <p>As restrições da viga em cada grau de liberdade nodal então definidas. Como há três nós, este será um vetor de 2 × 3 = 6 entradas. Apenas o grau de liberdade vertical (e não rotacional) é restringido nos nós A, B e C, e, portanto, isso é indicado usando -1 e 0 para irrestrito.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pycba</span> <span class="k">as</span> <span class="nn">cba</span>  <span class="c1"># Biblioteca principal</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>  <span class="c1"># Para arrays</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>  <span class="c1"># Para plotar</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pycba</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">cba</span>  <span class="c1"># Biblioteca principal</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>  <span class="c1"># Para arrays</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>  <span class="c1"># Para plotar</span>
 
 <span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mf">7.5</span><span class="p">,</span> <span class="mf">7.0</span><span class="p">]</span> <span class="c1"># Comprimento de cada vão da viga</span>
 <span class="n">EI</span> <span class="o">=</span> <span class="mi">30</span> <span class="o">*</span> <span class="mf">600e7</span> <span class="o">*</span> <span class="mf">1e-6</span> <span class="c1"># Cálculo da rigidez flexural</span>
@@ -880,6 +871,7 @@ Raiz quadrada do array2  :  [2.44948974 3.16227766 4.24264069]
 <li><p><a class="reference internal" href="Aula2_ControleFluxo.html"><span class="std std-doc">Aula Anterior</span></a> | <a class="reference internal" href="Aula4_Fun%C3%A7%C3%B5es.html"><span class="std std-doc">Próxima Aula</span></a></p></li>
 </ul>
 </section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -917,7 +909,7 @@ Raiz quadrada do array2  :  [2.44948974 3.16227766 4.24264069]
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">CONTROLE DE FLUXO</p>
+        <p class="prev-next-title">Controle de Fluxo</p>
       </div>
     </a>
     <a class="right-next"
@@ -936,8 +928,7 @@ Raiz quadrada do array2  :  [2.44948974 3.16227766 4.24264069]
             
             
               
-                <dialog id="pst-secondary-sidebar-modal"></dialog>
-                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
 
 
   <div class="sidebar-secondary-item">
@@ -946,21 +937,17 @@ Raiz quadrada do array2  :  [2.44948974 3.16227766 4.24264069]
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Importando Módulos</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#encerrando-um-programa-antecipadamente-com-a-funcao-sys-exit">Encerrando um programa antecipadamente com a função sys.exit()</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#um-programa-curto-adivinhe-o-numero">Um programa curto: Adivinhe o número</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#renomeando-modulos">Renomeando módulos</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao-das-bibliotecas-de-python">Classificação das bibliotecas de Python</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#importacao-de-bibliotecas-externas">Importação de bibliotecas externas</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#encerrando-um-programa-antecipadamente-com-a-funcao-sys-exit">Encerrando um programa antecipadamente com a função sys.exit()</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#um-programa-curto-adivinhe-o-numero">Um programa curto: Adivinhe o número</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#renomeando-modulos">Renomeando módulos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#classificacao-das-bibliotecas-de-python">Classificação das bibliotecas de Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importacao-de-bibliotecas-externas">Importação de bibliotecas externas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">Numpy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pandas">Pandas</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matplotlib">Matplotlib</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bibliotecas-muito-utilizadas">Bibliotecas Muito Utilizadas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-pratico-de-uso-na-engenharia-civil">Exemplo Prático de Uso na Engenharia Civil</a></li>
 </ul>
-</li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#exemplo-pratico-de-uso-na-engenharia-civil">Exemplo Prático de Uso na Engenharia Civil</a></li>
-</ul>
-
   </nav></div>
 
 </div></div>
@@ -1008,8 +995,8 @@ By UniRobótica
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script defer src="../_static/scripts/bootstrap.js?digest=26a4bc78f4c0ddb94549"></script>
-<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=26a4bc78f4c0ddb94549"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
