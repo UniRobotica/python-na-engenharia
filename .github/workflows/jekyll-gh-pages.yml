@@ -10,7 +10,7 @@ on:
       - '**/*.md'
       - '_config.yml'
       - '_toc.yml'
-  workflow_dispatch:  # Permite disparar manualmente o workflow
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -28,22 +28,14 @@ jobs:
     - name: Set up Python 3.11
       uses: actions/setup-python@v5
       with:
-        python-version: 3.11
-        cache: 'pip'
+        python-version: '3.11'
+        cache: pip
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install jupyter-book
-
-    - name: Cache Jupyter Book build
-      uses: actions/cache@v4
-      with:
-        path: _build
-        key: ${{ runner.os }}-jupyter-book-${{ hashFiles('**/*.ipynb', '**/*.md', '_config.yml', '_toc.yml') }}
-        restore-keys: |
-          ${{ runner.os }}-jupyter-book-
 
     - name: Build Jupyter Book
       run: |
@@ -60,7 +52,6 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Deploy to GitHub Pages
