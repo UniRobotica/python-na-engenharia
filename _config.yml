@@ -32,6 +32,8 @@ html:
   use_issues_button: true
   use_repository_button: true
   use_edit_page_button: true  # Botão para editar a página
+  extra_javascript:
+    - _static/custom.js  # Caminho para o seu arquivo JavaScript personalizado
 
 # Adiciona os notebooks à página de conteúdo
 content:
